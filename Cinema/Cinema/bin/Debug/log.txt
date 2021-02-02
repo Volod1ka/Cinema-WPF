@@ -1,0 +1,801 @@
+
+[21.01.2021 18:37:00]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'cinema.ticket_sales' doesn't exist
+   в MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   в MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   в MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Cinema.Scripts.DBase.DataBaseManager.SellTicket(UInt32 ticket) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseManager.cs:строка 279
+
+[21.01.2021 18:41:19]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* FROM tickets_sale WHERE id_ticket = 2' at line 1
+   в MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   в MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   в MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Cinema.Scripts.DBase.DataBaseManager.BackTicket(UInt32 ticket) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseManager.cs:строка 312
+
+[21.01.2021 20:41:54]=>[Error]: System.Windows.Markup.XamlParseException: "Добавление значения в коллекцию типа "System.Collections.ObjectModel.ObservableCollection(System.Windows.Controls.DataGridColumn)" вызвало исключение.": номер строки "99" и позиция в строке "62". ---> System.InvalidOperationException: "{DependencyProperty.UnsetValue}" не является допустимым значением для свойства "ColumnHeaderStyle".
+   в System.Windows.DependencyObject.GetEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, RequestFlags requests)
+   в System.Windows.DependencyObject.GetValueEntry(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, RequestFlags requests)
+   в System.Windows.DependencyObject.GetValue(DependencyProperty dp)
+   в System.Windows.Controls.DataGridHelper.GetCoercedTransferPropertyValue(DependencyObject baseObject, Object baseValue, DependencyProperty baseProperty, DependencyObject parentObject, DependencyProperty parentProperty, DependencyObject grandParentObject, DependencyProperty grandParentProperty)
+   в System.Windows.Controls.DataGridColumn.OnCoerceHeaderStyle(DependencyObject d, Object baseValue)
+   в System.Windows.DependencyObject.ProcessCoerceValue(DependencyProperty dp, PropertyMetadata metadata, EntryIndex& entryIndex, Int32& targetIndex, EffectiveValueEntry& newEntry, EffectiveValueEntry& oldEntry, Object& oldValue, Object baseValue, Object controlValue, CoerceValueCallback coerceValueCallback, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, Boolean skipBaseValueChecks)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.CoerceValue(DependencyProperty dp)
+   в System.Windows.Controls.DataGridHelper.TransferProperty(DependencyObject d, DependencyProperty p)
+   в System.Windows.Controls.DataGridColumn.SyncProperties()
+   в System.Windows.Controls.DataGrid.UpdateColumnSizeConstraints(IList list)
+   в System.Windows.Controls.DataGrid.OnColumnsChanged(Object sender, NotifyCollectionChangedEventArgs e)
+   в System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   в System.Windows.Controls.DataGridColumnCollection.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   в System.Collections.ObjectModel.ObservableCollection`1.InsertItem(Int32 index, T item)
+   в System.Windows.Controls.DataGridColumnCollection.InsertItem(Int32 index, DataGridColumn item)
+   в System.Collections.ObjectModel.Collection`1.Add(T item)
+   в System.Collections.ObjectModel.Collection`1.System.Collections.IList.Add(Object value)
+   в System.Xaml.Schema.XamlTypeInvoker.AddToCollection(Object instance, Object item)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.Add(Object collection, XamlType collectionType, Object value, XamlType valueXamlType)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 25
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 132
+[21.01.2021 20:42:12]=>[Error]: System.Windows.Markup.XamlParseException: "Добавление значения в коллекцию типа "System.Collections.ObjectModel.ObservableCollection(System.Windows.Controls.DataGridColumn)" вызвало исключение.": номер строки "99" и позиция в строке "62". ---> System.InvalidOperationException: "{DependencyProperty.UnsetValue}" не является допустимым значением для свойства "ColumnHeaderStyle".
+   в System.Windows.DependencyObject.GetEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, RequestFlags requests)
+   в System.Windows.DependencyObject.GetValueEntry(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, RequestFlags requests)
+   в System.Windows.DependencyObject.GetValue(DependencyProperty dp)
+   в System.Windows.Controls.DataGridHelper.GetCoercedTransferPropertyValue(DependencyObject baseObject, Object baseValue, DependencyProperty baseProperty, DependencyObject parentObject, DependencyProperty parentProperty, DependencyObject grandParentObject, DependencyProperty grandParentProperty)
+   в System.Windows.Controls.DataGridColumn.OnCoerceHeaderStyle(DependencyObject d, Object baseValue)
+   в System.Windows.DependencyObject.ProcessCoerceValue(DependencyProperty dp, PropertyMetadata metadata, EntryIndex& entryIndex, Int32& targetIndex, EffectiveValueEntry& newEntry, EffectiveValueEntry& oldEntry, Object& oldValue, Object baseValue, Object controlValue, CoerceValueCallback coerceValueCallback, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, Boolean skipBaseValueChecks)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.CoerceValue(DependencyProperty dp)
+   в System.Windows.Controls.DataGridHelper.TransferProperty(DependencyObject d, DependencyProperty p)
+   в System.Windows.Controls.DataGridColumn.SyncProperties()
+   в System.Windows.Controls.DataGrid.UpdateColumnSizeConstraints(IList list)
+   в System.Windows.Controls.DataGrid.OnColumnsChanged(Object sender, NotifyCollectionChangedEventArgs e)
+   в System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   в System.Windows.Controls.DataGridColumnCollection.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   в System.Collections.ObjectModel.ObservableCollection`1.InsertItem(Int32 index, T item)
+   в System.Windows.Controls.DataGridColumnCollection.InsertItem(Int32 index, DataGridColumn item)
+   в System.Collections.ObjectModel.Collection`1.Add(T item)
+   в System.Collections.ObjectModel.Collection`1.System.Collections.IList.Add(Object value)
+   в System.Xaml.Schema.XamlTypeInvoker.AddToCollection(Object instance, Object item)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.Add(Object collection, XamlType collectionType, Object value, XamlType valueXamlType)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 25
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 132
+
+[21.01.2021 20:50:01]=>[Error]: System.Windows.Markup.XamlParseException: "Добавление значения в коллекцию типа "System.Collections.ObjectModel.ObservableCollection(System.Windows.Controls.DataGridColumn)" вызвало исключение.": номер строки "99" и позиция в строке "62". ---> System.ArgumentException: "не число" не является допустимым значением свойства "System.Windows.FrameworkElement.MinWidth" в Setter.
+   в System.Windows.Setter.Seal()
+   в System.Windows.SetterBaseCollection.Seal()
+   в System.Windows.Style.Seal()
+   в System.Windows.Style.System.Windows.ISealable.Seal()
+   в System.Windows.StyleHelper.SealIfSealable(Object value)
+   в System.Windows.ResourceDictionary.SealValue(Object value)
+   в System.Windows.ResourceDictionary.OnGettingValue(Object key, Object& value, Boolean& canCache)
+   в System.Windows.ResourceDictionary.OnGettingValuePrivate(Object key, Object& value, Boolean& canCache)
+   в System.Windows.ResourceDictionary.GetValueWithoutLock(Object key, Boolean& canCache)
+   в System.Windows.ResourceDictionary.GetValue(Object key, Boolean& canCache)
+   в System.Windows.ResourceDictionary.GetValueWithoutLock(Object key, Boolean& canCache)
+   в System.Windows.ResourceDictionary.GetValue(Object key, Boolean& canCache)
+   в System.Windows.DeferredResourceReference.GetValue(BaseValueSourceInternal valueSource)
+   в System.Windows.DeferredAppResourceReference.GetValue(BaseValueSourceInternal valueSource)
+   в System.Windows.DependencyObject.GetEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, RequestFlags requests)
+   в System.Windows.DependencyObject.GetValueEntry(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, RequestFlags requests)
+   в System.Windows.DependencyObject.GetValue(DependencyProperty dp)
+   в System.Windows.Controls.DataGridHelper.GetCoercedTransferPropertyValue(DependencyObject baseObject, Object baseValue, DependencyProperty baseProperty, DependencyObject parentObject, DependencyProperty parentProperty, DependencyObject grandParentObject, DependencyProperty grandParentProperty)
+   в System.Windows.Controls.DataGridColumn.OnCoerceHeaderStyle(DependencyObject d, Object baseValue)
+   в System.Windows.DependencyObject.ProcessCoerceValue(DependencyProperty dp, PropertyMetadata metadata, EntryIndex& entryIndex, Int32& targetIndex, EffectiveValueEntry& newEntry, EffectiveValueEntry& oldEntry, Object& oldValue, Object baseValue, Object controlValue, CoerceValueCallback coerceValueCallback, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, Boolean skipBaseValueChecks)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.CoerceValue(DependencyProperty dp)
+   в System.Windows.Controls.DataGridHelper.TransferProperty(DependencyObject d, DependencyProperty p)
+   в System.Windows.Controls.DataGridColumn.SyncProperties()
+   в System.Windows.Controls.DataGrid.UpdateColumnSizeConstraints(IList list)
+   в System.Windows.Controls.DataGrid.OnColumnsChanged(Object sender, NotifyCollectionChangedEventArgs e)
+   в System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   в System.Windows.Controls.DataGridColumnCollection.OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+   в System.Collections.ObjectModel.ObservableCollection`1.InsertItem(Int32 index, T item)
+   в System.Windows.Controls.DataGridColumnCollection.InsertItem(Int32 index, DataGridColumn item)
+   в System.Collections.ObjectModel.Collection`1.Add(T item)
+   в System.Collections.ObjectModel.Collection`1.System.Collections.IList.Add(Object value)
+   в System.Xaml.Schema.XamlTypeInvoker.AddToCollection(Object instance, Object item)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.Add(Object collection, XamlType collectionType, Object value, XamlType valueXamlType)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 25
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 132
+
+[21.01.2021 23:51:45]=>[Error]: System.Windows.Markup.XamlParseException: "Задание свойства "System.Windows.FrameworkElement.Style" вызвало исключение.": номер строки "81" и позиция в строке "26". ---> System.InvalidCastException: Не удалось привести тип объекта "System.Windows.Controls.ControlTemplate" к типу "System.Windows.Style".
+   в System.Windows.Controls.ItemsControl.OnItemContainerStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.StyleHelper.ApplyStyleOrTemplateValue(FrameworkObject fo, DependencyProperty dp)
+   в System.Windows.StyleHelper.InvalidateContainerDependents(DependencyObject container, FrugalStructList`1& exclusionContainerDependents, FrugalStructList`1& oldContainerDependents, FrugalStructList`1& newContainerDependents)
+   в System.Windows.StyleHelper.DoStyleInvalidations(FrameworkElement fe, FrameworkContentElement fce, Style oldStyle, Style newStyle)
+   в System.Windows.StyleHelper.UpdateStyleCache(FrameworkElement fe, FrameworkContentElement fce, Style oldStyle, Style newStyle, Style& styleCache)
+   в System.Windows.FrameworkElement.OnStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   в System.Windows.Baml2006.WpfKnownMemberInvoker.SetValue(Object instance, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(XamlMember member, Object obj, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(Object inst, XamlMember property, Object value)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 25
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+[21.01.2021 23:51:49]=>[Error]: System.Windows.Markup.XamlParseException: "Задание свойства "System.Windows.FrameworkElement.Style" вызвало исключение.": номер строки "81" и позиция в строке "26". ---> System.InvalidCastException: Не удалось привести тип объекта "System.Windows.Controls.ControlTemplate" к типу "System.Windows.Style".
+   в System.Windows.Controls.ItemsControl.OnItemContainerStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.StyleHelper.ApplyStyleOrTemplateValue(FrameworkObject fo, DependencyProperty dp)
+   в System.Windows.StyleHelper.InvalidateContainerDependents(DependencyObject container, FrugalStructList`1& exclusionContainerDependents, FrugalStructList`1& oldContainerDependents, FrugalStructList`1& newContainerDependents)
+   в System.Windows.StyleHelper.DoStyleInvalidations(FrameworkElement fe, FrameworkContentElement fce, Style oldStyle, Style newStyle)
+   в System.Windows.StyleHelper.UpdateStyleCache(FrameworkElement fe, FrameworkContentElement fce, Style oldStyle, Style newStyle, Style& styleCache)
+   в System.Windows.FrameworkElement.OnStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   в System.Windows.Baml2006.WpfKnownMemberInvoker.SetValue(Object instance, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(XamlMember member, Object obj, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(Object inst, XamlMember property, Object value)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 25
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+
+[21.01.2021 23:52:17]=>[Error]: System.Windows.Markup.XamlParseException: "Задание свойства "System.Windows.FrameworkElement.Style" вызвало исключение.": номер строки "81" и позиция в строке "26". ---> System.InvalidCastException: Не удалось привести тип объекта "System.Windows.Controls.ControlTemplate" к типу "System.Windows.Style".
+   в System.Windows.Controls.ItemsControl.OnItemContainerStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.StyleHelper.ApplyStyleOrTemplateValue(FrameworkObject fo, DependencyProperty dp)
+   в System.Windows.StyleHelper.InvalidateContainerDependents(DependencyObject container, FrugalStructList`1& exclusionContainerDependents, FrugalStructList`1& oldContainerDependents, FrugalStructList`1& newContainerDependents)
+   в System.Windows.StyleHelper.DoStyleInvalidations(FrameworkElement fe, FrameworkContentElement fce, Style oldStyle, Style newStyle)
+   в System.Windows.StyleHelper.UpdateStyleCache(FrameworkElement fe, FrameworkContentElement fce, Style oldStyle, Style newStyle, Style& styleCache)
+   в System.Windows.FrameworkElement.OnStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   в System.Windows.Baml2006.WpfKnownMemberInvoker.SetValue(Object instance, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(XamlMember member, Object obj, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(Object inst, XamlMember property, Object value)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 25
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+
+[21.01.2021 23:56:50]=>[Error]: System.Windows.Markup.XamlParseException: "Задание свойства "System.Windows.FrameworkElement.Style" вызвало исключение.": номер строки "81" и позиция в строке "26". ---> System.InvalidCastException: Не удалось привести тип объекта "System.Windows.Controls.ControlTemplate" к типу "System.Windows.Style".
+   в System.Windows.Controls.ItemsControl.OnItemContainerStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.StyleHelper.ApplyStyleOrTemplateValue(FrameworkObject fo, DependencyProperty dp)
+   в System.Windows.StyleHelper.InvalidateContainerDependents(DependencyObject container, FrugalStructList`1& exclusionContainerDependents, FrugalStructList`1& oldContainerDependents, FrugalStructList`1& newContainerDependents)
+   в System.Windows.StyleHelper.DoStyleInvalidations(FrameworkElement fe, FrameworkContentElement fce, Style oldStyle, Style newStyle)
+   в System.Windows.StyleHelper.UpdateStyleCache(FrameworkElement fe, FrameworkContentElement fce, Style oldStyle, Style newStyle, Style& styleCache)
+   в System.Windows.FrameworkElement.OnStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   в System.Windows.Baml2006.WpfKnownMemberInvoker.SetValue(Object instance, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(XamlMember member, Object obj, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(Object inst, XamlMember property, Object value)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 25
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+[21.01.2021 23:56:53]=>[Error]: System.Windows.Markup.XamlParseException: "Задание свойства "System.Windows.FrameworkElement.Style" вызвало исключение.": номер строки "81" и позиция в строке "26". ---> System.InvalidCastException: Не удалось привести тип объекта "System.Windows.Controls.ControlTemplate" к типу "System.Windows.Style".
+   в System.Windows.Controls.ItemsControl.OnItemContainerStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.StyleHelper.ApplyStyleOrTemplateValue(FrameworkObject fo, DependencyProperty dp)
+   в System.Windows.StyleHelper.InvalidateContainerDependents(DependencyObject container, FrugalStructList`1& exclusionContainerDependents, FrugalStructList`1& oldContainerDependents, FrugalStructList`1& newContainerDependents)
+   в System.Windows.StyleHelper.DoStyleInvalidations(FrameworkElement fe, FrameworkContentElement fce, Style oldStyle, Style newStyle)
+   в System.Windows.StyleHelper.UpdateStyleCache(FrameworkElement fe, FrameworkContentElement fce, Style oldStyle, Style newStyle, Style& styleCache)
+   в System.Windows.FrameworkElement.OnStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   в System.Windows.Baml2006.WpfKnownMemberInvoker.SetValue(Object instance, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(XamlMember member, Object obj, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(Object inst, XamlMember property, Object value)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 25
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+
+[27.01.2021 7:42:44]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Cinema.Scripts.DBase.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseConnection.cs:строка 52
+
+[27.01.2021 8:42:23]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Cinema.Scripts.DBase.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseConnection.cs:строка 52
+
+[27.01.2021 9:12:40]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Cinema.Scripts.DBase.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseConnection.cs:строка 52
+[27.01.2021 9:12:42]=>[Missing connection]: Connecting to data base denied.
+
+[29.01.2021 8:32:11]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Cinema.Scripts.DBase.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseConnection.cs:строка 52
+
+[29.01.2021 11:07:17]=>[Error]: Ссылка на объект не указывает на экземпляр объекта.
+
+[31.01.2021 16:31:33]=>[Error]: Поток не запущен.
+
+[31.01.2021 16:48:54]=>[Error]: Заданный аргумент находится вне диапазона допустимых значений.
+Имя параметра: index
+
+[31.01.2021 16:59:49]=>[Error]: Заданный аргумент находится вне диапазона допустимых значений.
+Имя параметра: index
+
+[31.01.2021 17:43:40]=>[Error]: System.Windows.Markup.XamlParseException: "Предоставление значения для "System.Windows.Markup.StaticExtension" вызвало исключение.": номер строки "95" и позиция в строке "10". ---> System.ArgumentException: 'Значение StaticExtension "Cinema.Properties.Resources.Culture" нельзя определить как перечисление, статическое поле или статическое свойство.
+   в System.Windows.Markup.StaticExtension.ProvideValue(IServiceProvider serviceProvider)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.CallProvideValue(MarkupExtension me, IServiceProvider serviceProvider)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 28
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+[31.01.2021 17:43:43]=>[Error]: System.Windows.Markup.XamlParseException: "Предоставление значения для "System.Windows.StaticResourceExtension" вызвало исключение.": номер строки "99" и позиция в строке "26". ---> System.Exception: Не удается найти ресурс с именем "TextBoxSearchStyle". Имена ресурсов определяются с учетом регистра.
+   в System.Windows.StaticResourceExtension.ProvideValueInternal(IServiceProvider serviceProvider, Boolean allowDeferredReference)
+   в System.Windows.StaticResourceExtension.ProvideValue(IServiceProvider serviceProvider)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.CallProvideValue(MarkupExtension me, IServiceProvider serviceProvider)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 28
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+[31.01.2021 17:43:45]=>[Error]: System.Windows.Markup.XamlParseException: "Предоставление значения для "System.Windows.StaticResourceExtension" вызвало исключение.": номер строки "99" и позиция в строке "26". ---> System.Exception: Не удается найти ресурс с именем "TextBoxSearchStyle". Имена ресурсов определяются с учетом регистра.
+   в System.Windows.StaticResourceExtension.ProvideValueInternal(IServiceProvider serviceProvider, Boolean allowDeferredReference)
+   в System.Windows.StaticResourceExtension.ProvideValue(IServiceProvider serviceProvider)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.CallProvideValue(MarkupExtension me, IServiceProvider serviceProvider)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 28
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+
+[01.02.2021 8:38:37]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Cinema.Scripts.DBase.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseConnection.cs:строка 58
+[01.02.2021 9:18:30]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Cinema.Scripts.DBase.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseConnection.cs:строка 58
+[01.02.2021 9:18:34]=>[Missing connection]: Connecting to data base denied.
+[01.02.2021 9:18:50]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Cinema.Scripts.DBase.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseConnection.cs:строка 58
+[01.02.2021 9:18:57]=>[Missing connection]: Connecting to data base denied.
+[01.02.2021 9:19:26]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Cinema.Scripts.DBase.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseConnection.cs:строка 58
+[01.02.2021 9:19:27]=>[Missing connection]: Connecting to data base denied.
+[01.02.2021 9:19:30]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Cinema.Scripts.DBase.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseConnection.cs:строка 58
+[01.02.2021 9:19:32]=>[Missing connection]: Connecting to data base denied.
+
+[01.02.2021 11:15:41]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Cinema.Scripts.DBase.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseConnection.cs:строка 58
+[01.02.2021 11:16:10]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Cinema.Scripts.DBase.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Scripts\DBase\DataBaseConnection.cs:строка 58
+[01.02.2021 11:16:12]=>[Missing connection]: Connecting to data base denied.
+
+[01.02.2021 11:30:30]=>[Error]: System.Windows.Markup.XamlParseException: "Задание свойства "System.Windows.Controls.TextBox.Text" вызвало исключение.": номер строки "99" и позиция в строке "243". ---> System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: source
+   в System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   в Cinema.MainWindow.UpdateDataGridSessions(Boolean isUpdateComboBox) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 288
+   в Cinema.MainWindow.TextBoxSearchSessions_TextChanged(Object sender, TextChangedEventArgs e) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 433
+   в System.Windows.Controls.TextChangedEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   в System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.Controls.Primitives.TextBoxBase.OnTextChanged(TextChangedEventArgs e)
+   в System.Windows.Controls.Primitives.TextBoxBase.OnTextContainerChanged(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Controls.TextBox.OnTextContainerChanged(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Documents.TextContainerChangedEventHandler.Invoke(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Documents.TextContainer.EndChange(Boolean skipEvents)
+   в System.Windows.Documents.TextContainer.System.Windows.Documents.ITextContainer.EndChange(Boolean skipEvents)
+   в System.Windows.Documents.TextRangeBase.EndChange(ITextRange thisRange, Boolean disableScroll, Boolean skipEvents)
+   в System.Windows.Documents.TextRange.System.Windows.Documents.ITextRange.EndChange(Boolean disableScroll, Boolean skipEvents)
+   в System.Windows.Documents.TextRange.ChangeBlock.System.IDisposable.Dispose()
+   в System.Windows.Controls.TextBox.OnTextPropertyChanged(String oldText, String newText)
+   в System.Windows.Controls.TextBox.OnTextPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.Controls.TextBox.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   в System.Windows.Baml2006.WpfKnownMemberInvoker.SetValue(Object instance, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(XamlMember member, Object obj, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(Object inst, XamlMember property, Object value)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 28
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+[01.02.2021 11:30:33]=>[Error]: System.Windows.Markup.XamlParseException: "Задание свойства "System.Windows.Controls.TextBox.Text" вызвало исключение.": номер строки "99" и позиция в строке "243". ---> System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: source
+   в System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   в Cinema.MainWindow.UpdateDataGridSessions(Boolean isUpdateComboBox) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 288
+   в Cinema.MainWindow.TextBoxSearchSessions_TextChanged(Object sender, TextChangedEventArgs e) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 433
+   в System.Windows.Controls.TextChangedEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   в System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.Controls.Primitives.TextBoxBase.OnTextChanged(TextChangedEventArgs e)
+   в System.Windows.Controls.Primitives.TextBoxBase.OnTextContainerChanged(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Controls.TextBox.OnTextContainerChanged(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Documents.TextContainerChangedEventHandler.Invoke(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Documents.TextContainer.EndChange(Boolean skipEvents)
+   в System.Windows.Documents.TextContainer.System.Windows.Documents.ITextContainer.EndChange(Boolean skipEvents)
+   в System.Windows.Documents.TextRangeBase.EndChange(ITextRange thisRange, Boolean disableScroll, Boolean skipEvents)
+   в System.Windows.Documents.TextRange.System.Windows.Documents.ITextRange.EndChange(Boolean disableScroll, Boolean skipEvents)
+   в System.Windows.Documents.TextRange.ChangeBlock.System.IDisposable.Dispose()
+   в System.Windows.Controls.TextBox.OnTextPropertyChanged(String oldText, String newText)
+   в System.Windows.Controls.TextBox.OnTextPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.Controls.TextBox.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   в System.Windows.Baml2006.WpfKnownMemberInvoker.SetValue(Object instance, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(XamlMember member, Object obj, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(Object inst, XamlMember property, Object value)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 28
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+[01.02.2021 11:30:35]=>[Error]: System.Windows.Markup.XamlParseException: "Задание свойства "System.Windows.Controls.TextBox.Text" вызвало исключение.": номер строки "99" и позиция в строке "243". ---> System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: source
+   в System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   в Cinema.MainWindow.UpdateDataGridSessions(Boolean isUpdateComboBox) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 288
+   в Cinema.MainWindow.TextBoxSearchSessions_TextChanged(Object sender, TextChangedEventArgs e) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 433
+   в System.Windows.Controls.TextChangedEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   в System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.Controls.Primitives.TextBoxBase.OnTextChanged(TextChangedEventArgs e)
+   в System.Windows.Controls.Primitives.TextBoxBase.OnTextContainerChanged(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Controls.TextBox.OnTextContainerChanged(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Documents.TextContainerChangedEventHandler.Invoke(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Documents.TextContainer.EndChange(Boolean skipEvents)
+   в System.Windows.Documents.TextContainer.System.Windows.Documents.ITextContainer.EndChange(Boolean skipEvents)
+   в System.Windows.Documents.TextRangeBase.EndChange(ITextRange thisRange, Boolean disableScroll, Boolean skipEvents)
+   в System.Windows.Documents.TextRange.System.Windows.Documents.ITextRange.EndChange(Boolean disableScroll, Boolean skipEvents)
+   в System.Windows.Documents.TextRange.ChangeBlock.System.IDisposable.Dispose()
+   в System.Windows.Controls.TextBox.OnTextPropertyChanged(String oldText, String newText)
+   в System.Windows.Controls.TextBox.OnTextPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.Controls.TextBox.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   в System.Windows.Baml2006.WpfKnownMemberInvoker.SetValue(Object instance, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(XamlMember member, Object obj, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(Object inst, XamlMember property, Object value)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 28
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+[01.02.2021 11:30:38]=>[Error]: System.Windows.Markup.XamlParseException: "Задание свойства "System.Windows.Controls.TextBox.Text" вызвало исключение.": номер строки "99" и позиция в строке "243". ---> System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: source
+   в System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   в Cinema.MainWindow.UpdateDataGridSessions(Boolean isUpdateComboBox) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 288
+   в Cinema.MainWindow.TextBoxSearchSessions_TextChanged(Object sender, TextChangedEventArgs e) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 433
+   в System.Windows.Controls.TextChangedEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   в System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.Controls.Primitives.TextBoxBase.OnTextChanged(TextChangedEventArgs e)
+   в System.Windows.Controls.Primitives.TextBoxBase.OnTextContainerChanged(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Controls.TextBox.OnTextContainerChanged(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Documents.TextContainerChangedEventHandler.Invoke(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Documents.TextContainer.EndChange(Boolean skipEvents)
+   в System.Windows.Documents.TextContainer.System.Windows.Documents.ITextContainer.EndChange(Boolean skipEvents)
+   в System.Windows.Documents.TextRangeBase.EndChange(ITextRange thisRange, Boolean disableScroll, Boolean skipEvents)
+   в System.Windows.Documents.TextRange.System.Windows.Documents.ITextRange.EndChange(Boolean disableScroll, Boolean skipEvents)
+   в System.Windows.Documents.TextRange.ChangeBlock.System.IDisposable.Dispose()
+   в System.Windows.Controls.TextBox.OnTextPropertyChanged(String oldText, String newText)
+   в System.Windows.Controls.TextBox.OnTextPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.Controls.TextBox.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   в System.Windows.Baml2006.WpfKnownMemberInvoker.SetValue(Object instance, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(XamlMember member, Object obj, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(Object inst, XamlMember property, Object value)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 28
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
+[01.02.2021 11:30:40]=>[Error]: System.Windows.Markup.XamlParseException: "Задание свойства "System.Windows.Controls.TextBox.Text" вызвало исключение.": номер строки "99" и позиция в строке "243". ---> System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: source
+   в System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   в Cinema.MainWindow.UpdateDataGridSessions(Boolean isUpdateComboBox) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 288
+   в Cinema.MainWindow.TextBoxSearchSessions_TextChanged(Object sender, TextChangedEventArgs e) в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 433
+   в System.Windows.Controls.TextChangedEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   в System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.Controls.Primitives.TextBoxBase.OnTextChanged(TextChangedEventArgs e)
+   в System.Windows.Controls.Primitives.TextBoxBase.OnTextContainerChanged(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Controls.TextBox.OnTextContainerChanged(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Documents.TextContainerChangedEventHandler.Invoke(Object sender, TextContainerChangedEventArgs e)
+   в System.Windows.Documents.TextContainer.EndChange(Boolean skipEvents)
+   в System.Windows.Documents.TextContainer.System.Windows.Documents.ITextContainer.EndChange(Boolean skipEvents)
+   в System.Windows.Documents.TextRangeBase.EndChange(ITextRange thisRange, Boolean disableScroll, Boolean skipEvents)
+   в System.Windows.Documents.TextRange.System.Windows.Documents.ITextRange.EndChange(Boolean disableScroll, Boolean skipEvents)
+   в System.Windows.Documents.TextRange.ChangeBlock.System.IDisposable.Dispose()
+   в System.Windows.Controls.TextBox.OnTextPropertyChanged(String oldText, String newText)
+   в System.Windows.Controls.TextBox.OnTextPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.Controls.TextBox.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+   в System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+   в System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+   в System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+   в System.Windows.Baml2006.WpfKnownMemberInvoker.SetValue(Object instance, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(XamlMember member, Object obj, Object value)
+   в MS.Internal.Xaml.Runtime.ClrObjectRuntime.SetValue(Object inst, XamlMember property, Object value)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   в System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   в System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   в System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   в Cinema.MainWindow.InitializeComponent() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml:строка 1
+   в Cinema.MainWindow..ctor() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 28
+   в Cinema.LoginWindow.OpenMainWindow() в D:\Microsoft Visual Studio\Projects\Cinema\Cinema\Windows\LoginWindow.xaml.cs:строка 131
