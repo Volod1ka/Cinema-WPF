@@ -13,12 +13,12 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         FontSize="14"
-        MouseDown="LogWindow_MouseDown"
+        MouseDown="LoginWindow_MouseDown"
         Background="Transparent"
-        Closed="LogWindow_Closed"
-        Loaded="LogWindow_Loaded">
+        Closed="LoginWindow_Closed"
+        Loaded="LoginWindow_Loaded">
     
-    <Grid x:Name="gridSignUp">
+    <Grid x:Name="GridSignUp">
         <Rectangle Fill="{StaticResource MainBackground}" Margin="-86,-63,-4,210" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -51,23 +51,23 @@
             </Rectangle.RenderTransform>
         </Rectangle>
 
-        <Button x:Name="bttnStateMin" Content="—" Style="{StaticResource ButtonTitleStyle}" Click="bttnStateMin_Click" Margin="0,0,40,0"/>
-        <Button x:Name="bttnExit" Content="✕" Style="{StaticResource ButtonTitleStyle}" Click="bttnExit_Click"/>
+        <Button x:Name="ButtonStateMin" Content="—" Style="{StaticResource ButtonTitleStyle}" Click="ButtonStateMin_Click" Margin="0,0,40,0"/>
+        <Button x:Name="ButtonExit" Content="✕" Style="{StaticResource ButtonTitleStyle}" Click="ButtonExit_Click"/>
 
         <Label Content="{x:Static res:Language.Label1}" Foreground="{StaticResource MainForeground}" Height="30" Margin="32,41,0,0" VerticalAlignment="Top" FontSize="17" HorizontalAlignment="Left" Width="256"/>
         <Label Content="{x:Static res:Language.Label2}" Foreground="{StaticResource MainForeground}" Height="30" Margin="32,71,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256" FontFamily="Arial"/>
 
-        <Label Content="{x:Static res:Language.lLogin}" Foreground="{StaticResource Foreground}" Height="30" Margin="32,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256"/>
-        <TextBox x:Name="txtLogin" Style="{StaticResource TextBoxLoginStyle}" Margin="32,150,0,0" TextChanged="txtLogin_TextChanged" MaxLength="30" PreviewTextInput="txtLogin_PreviewTextInput"/>
+        <Label Content="{x:Static res:Language.LabelLogin}" Foreground="{StaticResource Foreground}" Height="30" Margin="32,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256"/>
+        <TextBox x:Name="TextBoxLogin" Style="{StaticResource TextBoxLoginStyle}" Margin="32,150,0,0" TextChanged="TextBoxLogin_TextChanged" MaxLength="30" PreviewTextInput="TextBoxLogin_PreviewTextInput"/>
 
-        <Label Content="{x:Static res:Language.lPassword}" Foreground="{StaticResource Foreground}" Height="30" Margin="32,186,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256"/>
-        <PasswordBox x:Name="txtPassword" Style="{StaticResource TextBoxPasswordStyle}" Margin="32,216,0,0" PasswordChanged="txtPassword_PasswordChanged" PreviewTextInput="txtPassword_PreviewTextInput"/>
+        <Label Content="{x:Static res:Language.LabelPassword}" Foreground="{StaticResource Foreground}" Height="30" Margin="32,186,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256"/>
+        <PasswordBox x:Name="TextBoxPassword" Style="{StaticResource TextBoxPasswordStyle}" Margin="32,216,0,0" PasswordChanged="TextBoxPassword_PasswordChanged" PreviewTextInput="TextBoxPassword_PreviewTextInput"/>
 
-        <CheckBox x:Name="checkRememberMe" Content="{x:Static res:Language.checkRememberMe}" Foreground="{StaticResource Foreground}" HorizontalAlignment="Left" Margin="32,244,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" BorderBrush="{StaticResource MainBackground}"/>
-        <Button x:Name="bttnSignIn" Content="{x:Static res:Language.bttnSignIn}" Style="{StaticResource ButtonSignInStyle}" Click="bttnSignIn_Click"/>
+        <CheckBox x:Name="CheckBoxRememberMe" Content="{x:Static res:Language.CheckBoxRememberMe}" Foreground="{StaticResource Foreground}" HorizontalAlignment="Left" Margin="32,244,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" BorderBrush="{StaticResource MainBackground}"/>
+        <Button x:Name="ButtonSignIn" Content="{x:Static res:Language.ButtonSignIn}" Style="{StaticResource ButtonSignInStyle}" Click="ButtonSignIn_Click"/>
 
         <Label Height="30" Margin="32,320,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="256" FontFamily="Segoe UI Light">
-            <TextBlock x:Name="lConnection" Text="{x:Static res:Language.lConnection}" ToolTip="{x:Static res:Language.lConnectionToolTip}" Foreground="#FF569EE5" TextDecorations="Underline" Cursor="Hand" MouseDown="lConnection_MouseDown" FontFamily="Segoe UI"/>
+            <TextBlock x:Name="LabelConnection" Text="{x:Static res:Language.LabelConnection}" ToolTip="{x:Static res:Language.LabelConnectionToolTip}" Foreground="#FF569EE5" TextDecorations="Underline" Cursor="Hand" MouseDown="LabelConnection_MouseDown" FontFamily="Segoe UI"/>
         </Label>        
     </Grid>
 </Window>

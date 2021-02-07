@@ -14,7 +14,7 @@
         <Setter Property="Height" Value="24"/>
         <Setter Property="Width" Value="256"/>
         <Setter Property="TextAlignment"  Value="Center"/>
-        <Setter Property="MaxLength" Value="60"/>
+        <Setter Property="MaxLength" Value="20"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
     </Style>
 
@@ -158,6 +158,7 @@
             <Setter Property="BorderBrush" Value="{StaticResource ShadowColor}"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="{StaticResource Foreground}"/>
+            <Setter Property="SelectionMode" Value="Single"/>
             <Setter Property="ColumnHeaderStyle" Value="{DynamicResource DataGridHeaderStyle}"/>
             <Setter Property="RowStyle" Value="{DynamicResource DataGridRowStyle}"/>
             <Setter Property="CellStyle" Value="{DynamicResource DataGridCellStyle}"/>
@@ -208,6 +209,38 @@
                 <Setter Property="Background" Value="{StaticResource SelectedBackground}"/>
                 <Setter Property="BorderBrush" Value="{StaticResource SelectedBackground}"/>
                 <Setter Property="Foreground" Value="{StaticResource Foreground}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TabControlStyle" TargetType="TabControl">
+        <Style.Setters>
+            <Setter Property="BorderBrush" Value="{StaticResource ShadowColor}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource Foreground}"/>
+            <Setter Property="ItemContainerStyle" Value="{DynamicResource TabItemStyle}"/>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="TabItemStyle" TargetType="TabItem">
+        <Style.Setters>
+            <Setter Property="Background" Value="{StaticResource MainBackground}"/>
+            <Setter Property="Foreground" Value="{StaticResource MainForeground}"/>
+            <Setter Property="Height" Value="40"/>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource SelectedBackground}"/>
+                <Setter Property="Foreground" Value="{StaticResource MainBackground}"/>
+
+                <Setter Property="BorderBrush" Value="{StaticResource MainBackground}"/>
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{StaticResource SelectedBackground}"/>
+                <Setter Property="Foreground" Value="{StaticResource Foreground}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{StaticResource DisabledForeground}"/>
             </Trigger>
         </Style.Triggers>
     </Style>

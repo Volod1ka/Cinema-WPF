@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Cinema.Scripts.DBase;
 
 namespace Cinema
 {
@@ -21,89 +20,81 @@ namespace Cinema
         public LoginWindow()
         {
             InitializeComponent();
-            /*
-            if (DataBaseConnection.ConnectionOpen())
-            {
-                MessageBox.Show("Вдалося підключитися до бази!");
-            }
-            else
-            {
-                MessageBox.Show("Не вдалося підключитися до бази!");
-            }*/
         }
 
         #endregion
 
         #region Windows Methods
         
-        private void bttnExit_Click(object sender, RoutedEventArgs e)
+        private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
         
-        private void LogWindow_MouseDown(object sender, MouseButtonEventArgs e)
+        private void LoginWindow_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MoveWindow(sender, e);
         }
         
-        private void bttnStateMin_Click(object sender, RoutedEventArgs e)
+        private void ButtonStateMin_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
         }
         
-        private void LogWindow_Loaded(object sender, RoutedEventArgs e)
+        private void LoginWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            CheckConnectionDBase();
+            Scripts.Data.DataBaseConnection.SetConnectingString(Properties.Resources.ConnectString);
+            CheckConnectionDataBase();
             LoadRememberMe();
         }
 
-        private void LogWindow_Closed(object sender, EventArgs e)
+        private void LoginWindow_Closed(object sender, EventArgs e)
         {
 
         }
 
         #region Window Login
 
-        private void txtLogin_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void TextBoxLogin_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !AccessToSymbol(e.Text);
         }
         
-        private void txtPassword_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void TextBoxPassword_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !AccessToSymbol(e.Text);
         }
         
-        private void bttnSignIn_Click(object sender, RoutedEventArgs e)
+        private void ButtonSignIn_Click(object sender, RoutedEventArgs e)
         {
-            bttnSignIn.IsEnabled = false;
+            ButtonSignIn.IsEnabled = false;
 
             UsignIn();
-            
-            bttnSignIn.IsEnabled = true;
+
+            ButtonSignIn.IsEnabled = true;
         }
         
-        private void txtPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        private void TextBoxPassword_PasswordChanged(object sender, RoutedEventArgs e)
         {
             AccessToUsignIn();
         }
         
-        private void txtLogin_TextChanged(object sender, TextChangedEventArgs e)
+        private void TextBoxLogin_TextChanged(object sender, TextChangedEventArgs e)
         {
             AccessToUsignIn();
         }
 
-        private void lConnection_MouseDown(object sender, MouseButtonEventArgs e)
+        private void LabelConnection_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            lConnection.IsEnabled = false;
+            LabelConnection.IsEnabled = false;
 
-            if (!CheckConnectionDBase())
+            if (!CheckConnectionDataBase())
             {
                 MessageBox.Show(Languages.Language.ErrorCheckConnectionDB, "Date base connection", MessageBoxButton.OKCancel, MessageBoxImage.Information);
                 Scripts.LogFile.Log("Connecting to data base denied.", "Missing connection");
             }
 
-            lConnection.IsEnabled = true;
+            LabelConnection.IsEnabled = true;
         }
 
         #endregion
@@ -114,24 +105,25 @@ namespace Cinema
 
         private void AccessToUsignIn()
         {
-            bttnSignIn.IsEnabled = txtLogin.Text.Length >= MinLengthLog && txtPassword.Password.Length >= MinLengthPas;
+            ButtonSignIn.IsEnabled = TextBoxLogin.Text.Length >= MinLengthLog && TextBoxPassword.Password.Length >= MinLengthPas;
         }
         
         private void ClearAllTextBox()
         {
-            txtLogin.Text = "";
-            txtPassword.Password = "";
-            checkRememberMe.IsChecked = false;
+            TextBoxLogin.Text = "";
+            TextBoxPassword.Password = "";
+            CheckBoxRememberMe.IsChecked = false;
         }
         
         private void OpenMainWindow()
         {
             try
             {
-                MainWindow main = new MainWindow();
+                Window main = new MainWindow();
+
                 main.Show();
 
-                if (!checkRememberMe.IsChecked.Value)
+                if (!CheckBoxRememberMe.IsChecked.Value)
                 {
                     ClearAllTextBox();
                 }
@@ -146,37 +138,37 @@ namespace Cinema
         
         private void UsignIn()
         {
-            string login = txtLogin.Text;
-            string password = txtPassword.Password;
+            string login = TextBoxLogin.Text;
+            string password = TextBoxPassword.Password;
 
-            if (!CheckConnectionDBase())
+            if (!CheckConnectionDataBase())
             {
                 MessageBox.Show(Languages.Language.SignInConnection, "", MessageBoxButton.OK, MessageBoxImage.Information);
                 Scripts.LogFile.Log("Connecting to data base denied.", "Missing connection");
             }
             else
             {
-                switch (DataBaseManager.SingIn(login, password))
+                switch (Scripts.Data.DataBaseManager.SingIn(login, $"{Scripts.CodeGenerator.GetHashString(password)}"))
                 {
-                    case DataBaseManager.Status.OK:
+                    case Scripts.Data.DataBaseManager.Status.OK:
                         {
-                            MessageBox.Show($"{Languages.Language.SignInSuccessful} {Account.UserName}.", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                            MessageBox.Show($"{Languages.Language.SignInSuccessful} {Scripts.Account.UserName}.", "", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                            SaveRememberMe(checkRememberMe.IsChecked.Value);
+                            SaveRememberMe(CheckBoxRememberMe.IsChecked.Value);
                             OpenMainWindow();
                         }
                         break;
-                    case DataBaseManager.Status.Unauthorized:
+                    case Scripts.Data.DataBaseManager.Status.Unauthorized:
                         {
                             MessageBox.Show(Languages.Language.SignInUnauthorized, "", MessageBoxButton.OK, MessageBoxImage.Information);
                         }
                         break;
-                    case DataBaseManager.Status.Forbidden:
+                    case Scripts.Data.DataBaseManager.Status.Forbidden:
                         {
                             MessageBox.Show(Languages.Language.SignInForbidden, "", MessageBoxButton.OK, MessageBoxImage.Information);
                         }
                         break;
-                    case DataBaseManager.Status.NotFound:
+                    case Scripts.Data.DataBaseManager.Status.NotFound:
                         {
                             MessageBox.Show(Languages.Language.SignInNotFound, "", MessageBoxButton.OK, MessageBoxImage.Information);
                         }
@@ -195,32 +187,32 @@ namespace Cinema
         
         private bool AccessToSymbol(string Symbol)
         {
-            return CodeGenerator.StringAccessSymbols.Contains(Symbol);
+            return Scripts.CodeGenerator.StringAccessSymbols.Contains(Symbol);
         }
         
         private void LoadRememberMe()
         {
             if (Properties.Settings.Default.isRememberMe)
             {
-                txtLogin.Text = Properties.Settings.Default.UserLogin;
-                txtPassword.Password = Properties.Settings.Default.UserPassword;
-                checkRememberMe.IsChecked = Properties.Settings.Default.isRememberMe;
+                TextBoxLogin.Text = Properties.Settings.Default.UserLogin;
+                TextBoxPassword.Password = Properties.Settings.Default.UserPassword;
+                CheckBoxRememberMe.IsChecked = Properties.Settings.Default.isRememberMe;
             }
         }
         
         private void SaveRememberMe(bool isRememberMe)
         {
-            Properties.Settings.Default.UserLogin = isRememberMe ? txtLogin.Text : "";
-            Properties.Settings.Default.UserPassword = isRememberMe ? txtPassword.Password : "";
+            Properties.Settings.Default.UserLogin = isRememberMe ? TextBoxLogin.Text : "";
+            Properties.Settings.Default.UserPassword = isRememberMe ? TextBoxPassword.Password : "";
             Properties.Settings.Default.isRememberMe = isRememberMe;
 
             Properties.Settings.Default.Save();
         }
 
-        private bool CheckConnectionDBase()
+        private bool CheckConnectionDataBase()
         {
-            bool isConnectionCorrect = DataBaseConnection.isConnectionCorrect;
-            lConnection.Visibility = isConnectionCorrect ? Visibility.Hidden : Visibility.Visible;
+            bool isConnectionCorrect = Scripts.Data.DataBaseConnection.isConnectionCorrect;
+            LabelConnection.Visibility = isConnectionCorrect ? Visibility.Hidden : Visibility.Visible;
 
             return isConnectionCorrect;
         }

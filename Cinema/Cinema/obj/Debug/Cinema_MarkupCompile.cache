@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Microsoft Visual Studio\Projects\Cinema\Cinema\obj\Debug\
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\
 Cinema
 none
 false
 DEBUG;TRACE
-D:\Microsoft Visual Studio\Projects\Cinema\Cinema\App.xaml
-4-1378493239
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\App.xaml
+5-618471572
 
-141934828847
-34-1941886193
-Styles\Resources.xaml;Styles\Styles.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;
+9409742320
+36-552093281
+Styles\Resources.xaml;Styles\Styles.xaml;Windows\LoginWindow.xaml;Windows\AdminWindow.xaml;Windows\MainWindow.xaml;
 
 False
 

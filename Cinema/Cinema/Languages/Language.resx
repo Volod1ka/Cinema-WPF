@@ -117,11 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bttnSignIn" xml:space="preserve">
+  <data name="ButtonSignIn" xml:space="preserve">
     <value>Вхід в систему</value>
   </data>
-  <data name="checkRememberMe" xml:space="preserve">
+  <data name="CheckBoxRememberMe" xml:space="preserve">
     <value>Запам'ятати мене</value>
+  </data>
+  <data name="DataGridColumnFilm" xml:space="preserve">
+    <value>Назва фільму</value>
+  </data>
+  <data name="DataGridColumnHall" xml:space="preserve">
+    <value>Назва зали</value>
+  </data>
+  <data name="DataGridColumnIsPaid" xml:space="preserve">
+    <value>Продано</value>
+  </data>
+  <data name="DataGridColumnIsToBook" xml:space="preserve">
+    <value>Заброньовано</value>
+  </data>
+  <data name="DataGridColumnPrice" xml:space="preserve">
+    <value>Вартість</value>
+  </data>
+  <data name="DataGridColumnRow" xml:space="preserve">
+    <value>Ряд</value>
+  </data>
+  <data name="DataGridColumnSeat" xml:space="preserve">
+    <value>Місце</value>
+  </data>
+  <data name="DataGridColumnSessionData" xml:space="preserve">
+    <value>День сеансу</value>
+  </data>
+  <data name="DataGridColumnSessionTime" xml:space="preserve">
+    <value>Час сеансу</value>
   </data>
   <data name="ErrorCheckConnectionDB" xml:space="preserve">
     <value>Не вдалося підключитися до бази даних. Зверніться до Адміністратора для вирішення даної проблеми.</value>
@@ -132,17 +159,56 @@
   <data name="Label2" xml:space="preserve">
     <value>Будь ласка, авторизуйтеся...</value>
   </data>
-  <data name="lConnection" xml:space="preserve">
+  <data name="LabelConnection" xml:space="preserve">
     <value>Відсутнє підключення до бази...</value>
   </data>
-  <data name="lConnectionToolTip" xml:space="preserve">
+  <data name="LabelConnectionToolTip" xml:space="preserve">
     <value>Повторити спробу підключення до бази. При відсутності даного поля, підключення присутнє.</value>
   </data>
-  <data name="lLogin" xml:space="preserve">
+  <data name="LabelDateTime" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="LabelFilmName" xml:space="preserve">
+    <value>Назва фільму:</value>
+  </data>
+  <data name="LabelFind" xml:space="preserve">
+    <value>Пошук...</value>
+  </data>
+  <data name="LabelHallName" xml:space="preserve">
+    <value>Назва зали:</value>
+  </data>
+  <data name="LabelLastTickets" xml:space="preserve">
+    <value>Залишок квитків:</value>
+  </data>
+  <data name="LabelLogin" xml:space="preserve">
     <value>Логін</value>
   </data>
-  <data name="lPassword" xml:space="preserve">
+  <data name="LabelPassword" xml:space="preserve">
     <value>Пароль</value>
+  </data>
+  <data name="LabelSellTickets" xml:space="preserve">
+    <value>Продано квитків:</value>
+  </data>
+  <data name="LabelSession" xml:space="preserve">
+    <value>Розклад сеансів:</value>
+  </data>
+  <data name="LabelTicket" xml:space="preserve">
+    <value>Квитки на сеанс:</value>
+  </data>
+  <data name="LabelToBookTickets" xml:space="preserve">
+    <value>Заброньовано квитків:</value>
+  </data>
+  <data name="MenuChangeUser" xml:space="preserve">
+    <value>Змінити користувача...</value>
+  </data>
+  <data name="MenuExit" xml:space="preserve">
+    <value>Вихід</value>
+  </data>
+  <data name="MenuItem1" xml:space="preserve">
+    <value>Програма</value>
+  </data>
+  <data name="MenuItemRefresh" xml:space="preserve">
+    <value>Оновити сеанси</value>
   </data>
   <data name="SignInConnection" xml:space="preserve">
     <value>Відсутнє підключення до бази. Повторіть спробу пізніше. </value>

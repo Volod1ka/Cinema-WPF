@@ -63,18 +63,99 @@ namespace Cinema.Languages {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Вхід в систему.
         /// </summary>
-        public static string bttnSignIn {
+        public static string ButtonSignIn {
             get {
-                return ResourceManager.GetString("bttnSignIn", resourceCulture);
+                return ResourceManager.GetString("ButtonSignIn", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на Запам&apos;ятати мене.
         /// </summary>
-        public static string checkRememberMe {
+        public static string CheckBoxRememberMe {
             get {
-                return ResourceManager.GetString("checkRememberMe", resourceCulture);
+                return ResourceManager.GetString("CheckBoxRememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Назва фільму.
+        /// </summary>
+        public static string DataGridColumnFilm {
+            get {
+                return ResourceManager.GetString("DataGridColumnFilm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Назва зали.
+        /// </summary>
+        public static string DataGridColumnHall {
+            get {
+                return ResourceManager.GetString("DataGridColumnHall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Продано.
+        /// </summary>
+        public static string DataGridColumnIsPaid {
+            get {
+                return ResourceManager.GetString("DataGridColumnIsPaid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Заброньовано.
+        /// </summary>
+        public static string DataGridColumnIsToBook {
+            get {
+                return ResourceManager.GetString("DataGridColumnIsToBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вартість.
+        /// </summary>
+        public static string DataGridColumnPrice {
+            get {
+                return ResourceManager.GetString("DataGridColumnPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ряд.
+        /// </summary>
+        public static string DataGridColumnRow {
+            get {
+                return ResourceManager.GetString("DataGridColumnRow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Місце.
+        /// </summary>
+        public static string DataGridColumnSeat {
+            get {
+                return ResourceManager.GetString("DataGridColumnSeat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на День сеансу.
+        /// </summary>
+        public static string DataGridColumnSessionData {
+            get {
+                return ResourceManager.GetString("DataGridColumnSessionData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Час сеансу.
+        /// </summary>
+        public static string DataGridColumnSessionTime {
+            get {
+                return ResourceManager.GetString("DataGridColumnSessionTime", resourceCulture);
             }
         }
         
@@ -108,36 +189,153 @@ namespace Cinema.Languages {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Відсутнє підключення до бази....
         /// </summary>
-        public static string lConnection {
+        public static string LabelConnection {
             get {
-                return ResourceManager.GetString("lConnection", resourceCulture);
+                return ResourceManager.GetString("LabelConnection", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на Повторити спробу підключення до бази. При відсутності даного поля, підключення присутнє..
         /// </summary>
-        public static string lConnectionToolTip {
+        public static string LabelConnectionToolTip {
             get {
-                return ResourceManager.GetString("lConnectionToolTip", resourceCulture);
+                return ResourceManager.GetString("LabelConnectionToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дата.
+        /// </summary>
+        public static string LabelDateTime {
+            get {
+                return ResourceManager.GetString("LabelDateTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Назва фільму:.
+        /// </summary>
+        public static string LabelFilmName {
+            get {
+                return ResourceManager.GetString("LabelFilmName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пошук....
+        /// </summary>
+        public static string LabelFind {
+            get {
+                return ResourceManager.GetString("LabelFind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Назва зали:.
+        /// </summary>
+        public static string LabelHallName {
+            get {
+                return ResourceManager.GetString("LabelHallName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Залишок квитків:.
+        /// </summary>
+        public static string LabelLastTickets {
+            get {
+                return ResourceManager.GetString("LabelLastTickets", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на Логін.
         /// </summary>
-        public static string lLogin {
+        public static string LabelLogin {
             get {
-                return ResourceManager.GetString("lLogin", resourceCulture);
+                return ResourceManager.GetString("LabelLogin", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на Пароль.
         /// </summary>
-        public static string lPassword {
+        public static string LabelPassword {
             get {
-                return ResourceManager.GetString("lPassword", resourceCulture);
+                return ResourceManager.GetString("LabelPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Продано квитків:.
+        /// </summary>
+        public static string LabelSellTickets {
+            get {
+                return ResourceManager.GetString("LabelSellTickets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Розклад сеансів:.
+        /// </summary>
+        public static string LabelSession {
+            get {
+                return ResourceManager.GetString("LabelSession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Квитки на сеанс:.
+        /// </summary>
+        public static string LabelTicket {
+            get {
+                return ResourceManager.GetString("LabelTicket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Заброньовано квитків:.
+        /// </summary>
+        public static string LabelToBookTickets {
+            get {
+                return ResourceManager.GetString("LabelToBookTickets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Змінити користувача....
+        /// </summary>
+        public static string MenuChangeUser {
+            get {
+                return ResourceManager.GetString("MenuChangeUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вихід.
+        /// </summary>
+        public static string MenuExit {
+            get {
+                return ResourceManager.GetString("MenuExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Програма.
+        /// </summary>
+        public static string MenuItem1 {
+            get {
+                return ResourceManager.GetString("MenuItem1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Оновити сеанси.
+        /// </summary>
+        public static string MenuItemRefresh {
+            get {
+                return ResourceManager.GetString("MenuItemRefresh", resourceCulture);
             }
         }
         

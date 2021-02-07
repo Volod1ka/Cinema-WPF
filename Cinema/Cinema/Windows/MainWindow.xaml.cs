@@ -27,7 +27,7 @@ namespace Cinema
         public MainWindow()
         {
             InitializeComponent();
-            Account.DiactivateMethod += ChangeUser;
+            Scripts.Account.DiactivateMethod += ChangeUser;
 
             tickets = new List<Scripts.Ticket>();
         }
@@ -42,7 +42,54 @@ namespace Cinema
         {
             if (MessageBox.Show("Ви бажаєте змінити користувача?", "", MessageBoxButton.YesNo, MessageBoxImage.Question).Equals(MessageBoxResult.Yes))
             {
-                Account.DiactivateAccount(message: false);
+                Scripts.Account.DiactivateAccount(message: false);
+            }
+        }
+
+        private void MenuItemSell_Click(object sender, RoutedEventArgs e)
+        {
+            if (SellTicket(isSell: true))
+            {
+                int index = GridTickets.SelectedIndex;
+
+                TicketsUpdate(index: index, isPaid: true);
+            }
+        }
+
+        private void MenuItemBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (SellTicket(isSell: false))
+            {
+                int index = GridTickets.SelectedIndex;
+
+                TicketsUpdate(index: index);
+            }
+        }
+
+        private void MenuItemToBook_Click(object sender, RoutedEventArgs e)
+        {
+            int index = GridTickets.SelectedIndex;
+
+            TicketsUpdate(index: index, isToBook: true);
+        }
+
+        private void MenuItemToBookCancel_Click(object sender, RoutedEventArgs e)
+        {
+            int index = GridTickets.SelectedIndex;
+
+            TicketsUpdate(index: index);
+        }
+
+        private void MenuItemToBookCancelAll_Click(object sender, RoutedEventArgs e)
+        {
+            for (int index = 0; index < GridTickets.Items.Count; index++)
+            {
+                var cellInfo = GridTickets.Items[index] as Scripts.Ticket;
+
+                if (!cellInfo.IsPaid && cellInfo.IsToBook)
+                {
+                    TicketsUpdate(index: index);
+                }
             }
         }
 
@@ -52,7 +99,7 @@ namespace Cinema
         {
             try
             {
-                MenuUserName.Header = $"{Account.UserName}";//\xE77B
+                MenuUserName.Header = $"{Scripts.Account.UserName}";//\xE77B
 
                 UpdateTicketsInfo();
                 UpdateDataGridSessions();
@@ -67,7 +114,7 @@ namespace Cinema
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            //
+            Scripts.Account.DiactivateMethod -= ChangeUser;
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -86,8 +133,16 @@ namespace Cinema
                     break;
             }
         }
-        
-        #endregion
+
+        private void ButtonStateMin_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void ButtonStateChange_Click(object sender, RoutedEventArgs e)
+        {
+            WindowStateChange();
+        }
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
@@ -96,6 +151,117 @@ namespace Cinema
                 Application.Current.Shutdown();
             }
         }
+
+        private void ButtonHide_Click(object sender, RoutedEventArgs e)
+        {
+            double newWidth;
+            Storyboard storyboard = new Storyboard();
+
+            CubicEase ease = new CubicEase { EasingMode = EasingMode.EaseOut };
+
+            DoubleAnimation animation = new DoubleAnimation();
+
+            if (!GridTicketsLeftIsVisible)
+            {
+                newWidth = this.MinWidth * 0.25f/*190*/;
+            }
+            else
+            {
+                newWidth = 0;
+            }
+
+            animation.Completed += AnimationCompleted;
+            animation.From = GridLeft.ActualWidth;
+            animation.To = newWidth;
+            animation.EasingFunction = ease;
+            animation.Duration = TimeSpan.FromSeconds(0.4d);
+            storyboard.Children.Add(animation);
+
+            Storyboard.SetTarget(animation, GridLeft);
+            Storyboard.SetTargetProperty(animation, new PropertyPath("(ColumnDefinition.MaxWidth)"));
+
+            storyboard.Begin();
+
+            GridTicketsLeftIsVisible = !GridTicketsLeftIsVisible;
+        }
+
+        private void GridTitleBar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MoveWindow(sender, e);
+        }
+
+        private void MenuItemRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateTicketsInfo();
+            UpdateDataGridSessions();
+
+            InsertInfoTicketsCount(SellTickets: "", ToBookTickets: "", LastTickets: "");
+        }
+
+        private void GridTickets_ContextMenuOpening(object sender, System.Windows.Controls.ContextMenuEventArgs e)
+        {
+            int index = GridTickets.SelectedIndex;
+            bool access = index > -1;
+
+            Scripts.Ticket cellInfo = access ? (Scripts.Ticket)GridTickets.SelectedCells[index].Item : new Scripts.Ticket();
+
+            MenuItemSell.IsEnabled = access ? !cellInfo.IsPaid : false;
+            MenuItemBack.IsEnabled = access ? cellInfo.IsPaid : false;
+            MenuItemToBook.IsEnabled = access ? !cellInfo.IsPaid && !cellInfo.IsToBook : false;
+            MenuItemToBookCancel.IsEnabled = access ? !cellInfo.IsPaid && cellInfo.IsToBook : false;
+            MenuItemToBookCancelAll.IsEnabled = access;
+        }
+
+        private void GridTickets_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        {
+            UpdateDataGridTickets();
+        }
+
+        private void GridSessions_SelectedCellsChanged(object sender, System.Windows.Controls.SelectedCellsChangedEventArgs e)
+        {
+            UpdateDataGridTickets();
+        }
+
+        private void ComboBoxFilms_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            UpdateDataGridSessions(isUpdateComboBox: false);
+        }
+
+        private void TextBoxSearchSessions_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            VisibilityGridSearchSessions(ref GridSearchSessions, ref TextBoxSearchSessions);
+            UpdateDataGridSessions(isUpdateComboBox: false);
+        }
+
+        private void TextBoxSearchTickets_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            VisibilityGridSearchSessions(ref GridSearchTickets, ref TextBoxSearchTickets);
+            UpdateDataGridTickets();
+        }
+
+        private void TextBoxSearchSessions_GotFocus(object sender, RoutedEventArgs e)
+        {
+            GridSearchSessions.Visibility = Visibility.Hidden;
+        }
+
+        private void TextBoxSearchSessions_LostFocus(object sender, RoutedEventArgs e)
+        {
+            VisibilityGridSearchSessions(ref GridSearchSessions, ref TextBoxSearchSessions);
+        }
+
+        private void TextBoxSearchTickets_GotFocus(object sender, RoutedEventArgs e)
+        {
+            GridSearchTickets.Visibility = Visibility.Hidden;
+        }
+
+        private void TextBoxSearchTickets_LostFocus(object sender, RoutedEventArgs e)
+        {
+            VisibilityGridSearchSessions(ref GridSearchTickets, ref TextBoxSearchTickets);
+        }
+
+        #endregion
+
+        #region Customers Methods
 
         private void MoveWindow(object sender, MouseEventArgs e)
         {
@@ -116,49 +282,6 @@ namespace Cinema
             }
         }
 
-        private void GridTitleBar_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MoveWindow(sender, e);
-        }
-
-        private void ButtonStateMin_Click(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-        }
-
-        private void ButtonTemp_Click(object sender, RoutedEventArgs e)
-        {
-            double newWidth;
-            Storyboard storyboard = new Storyboard();
-
-            CubicEase ease = new CubicEase { EasingMode = EasingMode.EaseOut };
-
-            DoubleAnimation animation = new DoubleAnimation();
-
-            if (!GridTicketsLeftIsVisible)
-            {
-                newWidth = this.MinWidth * 0.25f/*190*/;
-            }
-            else
-            {
-                newWidth = 0;                
-            }
-
-            animation.Completed += AnimationCompleted;
-            animation.From = GridLeft.ActualWidth;
-            animation.To = newWidth;
-            animation.EasingFunction = ease;
-            animation.Duration = TimeSpan.FromSeconds(0.4d);
-            storyboard.Children.Add(animation);
-
-            Storyboard.SetTarget(animation, GridLeft);
-            Storyboard.SetTargetProperty(animation, new PropertyPath("(ColumnDefinition.MaxWidth)"));
-
-            storyboard.Begin();
-
-            GridTicketsLeftIsVisible = !GridTicketsLeftIsVisible;
-        }
-
         private void WindowStateChange()
         {
             switch (this.WindowState)
@@ -175,11 +298,6 @@ namespace Cinema
                     break;
             }
         }
-
-        private void ButtonStateChange_Click(object sender, RoutedEventArgs e)
-        {
-            WindowStateChange();
-        }
                 
         private void AnimationCompleted(object sender, EventArgs e)
         {
@@ -190,7 +308,7 @@ namespace Cinema
         {
             while (true)
             {
-                LabelDateTime.Content = $"Дата: {DateTime.Now}";
+                LabelDateTime.Content = $"{Languages.Language.LabelDateTime}: {DateTime.Now}";
 
                 await System.Threading.Tasks.Task.Delay(1000);
             }
@@ -224,7 +342,7 @@ namespace Cinema
             Thread STAThread = new Thread(
                 delegate ()
                 {
-                    tickets = Scripts.DBase.DataBaseManager.GetListTickets();
+                    tickets = Scripts.Data.DataBaseManager.GetListTickets();
                 });
             STAThread.Start();
             STAThread.Join();
@@ -290,9 +408,10 @@ namespace Cinema
             (
                 from value
                     in tickets
-                    where value.SessionData.ToShortDateString().Contains(searchSession) ||
-                          value.SessionTime.ToShortTimeString().Contains(searchSession) || 
-                          value.Price.ToString().Contains(searchSession)
+                    where value.SessionData.AddHours(value.SessionTime.Hour).AddMinutes(value.SessionTime.Minute + 15) >= DateTime.Now &&
+                          (value.SessionData.ToShortDateString().Contains(searchSession) ||
+                          value.SessionTime.ToShortTimeString().Contains(searchSession) ||
+                          value.Price.ToString().Contains(searchSession))
                 group value by new { value.Film, value.Hall, value.SessionData, value.SessionTime }
                     into newGroup
                 where newGroup.Key.Film == film && newGroup.Key.Hall == hall
@@ -308,29 +427,8 @@ namespace Cinema
             }
 
             Application.Current.Windows[0].Show();
-            Account.Clear();
+            Scripts.Account.Clear();
             this.Close();
-        }
-
-        private void MenuItemRefresh_Click(object sender, RoutedEventArgs e)
-        {
-            UpdateTicketsInfo();
-            UpdateDataGridSessions();
-
-            InsertInfoTicketsCount(SellTickets: "", ToBookTickets: "", LastTickets: "");
-        }
-
-        private void GridTickets_ContextMenuOpening(object sender, System.Windows.Controls.ContextMenuEventArgs e)
-        {
-            int index = GridTickets.SelectedIndex;
-            bool access = index > -1;
-
-            Scripts.Ticket cellInfo = access ? (Scripts.Ticket)GridTickets.SelectedCells[index].Item : new Scripts.Ticket();
-
-            MenuItemSell.IsEnabled = access ? !cellInfo.IsPaid : false;
-            MenuItemBack.IsEnabled = access ? cellInfo.IsPaid : false;
-            MenuItemToBook.IsEnabled = access ? !cellInfo.IsPaid && !cellInfo.IsToBook : false;
-            MenuItemToBookCancel.IsEnabled = access ? !cellInfo.IsPaid && cellInfo.IsToBook : false;
         }
 
         private bool SellTicket(bool isSell)
@@ -342,26 +440,27 @@ namespace Cinema
             {
                 var cellInfo = GridTickets.SelectedCells[index].Item as Scripts.Ticket;
 
-                result = isSell ? Scripts.DBase.DataBaseManager.SellTicket(ticket: cellInfo.Id) : Scripts.DBase.DataBaseManager.BackTicket(ticket: cellInfo.Id);
-
+                if (cellInfo.SessionData.AddHours(cellInfo.SessionTime.Hour).AddMinutes(cellInfo.SessionTime.Minute + 15) >= DateTime.Now)
+                {
+                    result = isSell ? Scripts.Data.DataBaseManager.SellTicket(ticket: cellInfo.Id) : Scripts.Data.DataBaseManager.BackTicket(ticket: cellInfo.Id);
+                }
+                
                 if (!result)
                 {
-                    MessageBox.Show("Не вдалося виконати операцію.", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Не вдалося виконати операцію. Обновіть дані та повторіть спробу.", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
 
             return result;
         }
 
-        private void TicketsUpdate(bool isPaid = false, bool isToBook = false)
+        private void TicketsUpdate(int index = -1, bool isPaid = false, bool isToBook = false)
         {
-            int index = GridTickets.SelectedIndex;
-
-            if (index > -1)
+            if (index > -1 && index < GridTickets.Items.Count)
             {
-                var cellInfo = GridTickets.SelectedCells[index].Item as Scripts.Ticket;
+                var cellInfo = GridTickets.Items[index] as Scripts.Ticket;
 
-                if (Scripts.DBase.DataBaseManager.UpdateTicket(ticket: cellInfo.Id, isPaid: isPaid, isToBook: isToBook))
+                if (Scripts.Data.DataBaseManager.UpdateTicket(ticket: cellInfo.Id, isPaid: isPaid, isToBook: isToBook))
                 {
                     cellInfo.Input
                         (
@@ -379,42 +478,11 @@ namespace Cinema
 
                     GridTickets.Items.Refresh();
                 }
-                else
-                {
-                    MessageBox.Show("Не вдалося виконати операцію.", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
             }
-        }
-
-        private void MenuItemSell_Click(object sender, RoutedEventArgs e)
-        {
-            if (SellTicket(isSell: true))
+            else
             {
-                TicketsUpdate(isPaid: true);
+                MessageBox.Show("Не вдалося виконати операцію. Обновіть дані та повторіть спробу.", "", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-        }
-
-        private void MenuItemBack_Click(object sender, RoutedEventArgs e)
-        {
-            if (SellTicket(isSell: false))
-            {
-                TicketsUpdate();
-            }
-        }
-
-        private void MenuItemToBook_Click(object sender, RoutedEventArgs e)
-        {
-            TicketsUpdate(isToBook: true);
-        }
-
-        private void MenuItemToBookCancel_Click(object sender, RoutedEventArgs e)
-        {
-            TicketsUpdate();
-        }
-
-        private void GridSessions_SelectedCellsChanged(object sender, System.Windows.Controls.SelectedCellsChangedEventArgs e)
-        {
-            UpdateDataGridTickets();
         }
 
         private void InsertInfoTicketsCount(string SellTickets, string ToBookTickets, string LastTickets)
@@ -424,46 +492,11 @@ namespace Cinema
             TextBoxLastTickets.Text = LastTickets;
         }
 
-        private void ComboBoxFilms_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            UpdateDataGridSessions(isUpdateComboBox: false);
-        }
-
-        private void TextBoxSearchSessions_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-            VisibilityGridSearchSessions(ref GridSearchSessions, ref TextBoxSearchSessions);
-            UpdateDataGridSessions(isUpdateComboBox: false);
-        }
-
-        private void TextBoxSearchTickets_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-            VisibilityGridSearchSessions(ref GridSearchTickets, ref TextBoxSearchTickets);
-            UpdateDataGridTickets();
-        }
-
-        private void TextBoxSearchSessions_GotFocus(object sender, RoutedEventArgs e)
-        {
-            GridSearchSessions.Visibility = Visibility.Hidden;
-        }
-
-        private void TextBoxSearchSessions_LostFocus(object sender, RoutedEventArgs e)
-        {
-            VisibilityGridSearchSessions(ref GridSearchSessions, ref TextBoxSearchSessions);
-        }
-
         private void VisibilityGridSearchSessions(ref Grid grid, ref TextBox textBox)
         {
-            grid.Visibility = textBox.Text.Length > 0 ? Visibility.Hidden : Visibility.Visible;
+            grid.Visibility = textBox.Text.Length > 0 || textBox.IsFocused ? Visibility.Hidden : Visibility.Visible;
         }
 
-        private void TextBoxSearchTickets_GotFocus(object sender, RoutedEventArgs e)
-        {
-            GridSearchTickets.Visibility = Visibility.Hidden;
-        }
-
-        private void TextBoxSearchTickets_LostFocus(object sender, RoutedEventArgs e)
-        {
-            VisibilityGridSearchSessions(ref GridSearchTickets, ref TextBoxSearchTickets);
-        }
+        #endregion
     }
 }
