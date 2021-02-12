@@ -1,0 +1,73 @@
+﻿<Window x:Class="CinemaAdmin.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:res="clr-namespace:CinemaAdmin.Languages"
+        xmlns:local="clr-namespace:CinemaAdmin"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        Title="Window" Height="350" Width="320"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        FontSize="14"
+        MouseDown="LoginWindow_MouseDown"
+        Background="Transparent"
+        Closed="LoginWindow_Closed"
+        Loaded="LoginWindow_Loaded">
+    
+    <Grid x:Name="GridSignUp">
+        <Rectangle Fill="{StaticResource MainBackground}" Margin="-86,-63,-4,210" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-10.037"/>
+                    <RotateTransform Angle="-25.87"/>
+                    <TranslateTransform X="13.053" Y="26.917"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="{StaticResource Background}" Margin="0,106,0,0" RadiusX="8" RadiusY="10"/>
+        <Rectangle Fill="{StaticResource ShadowColor}" Margin="-45,104,262,242" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-10.037"/>
+                    <RotateTransform Angle="-25.87"/>
+                    <TranslateTransform X="13.053" Y="26.917"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="{StaticResource MainBackground}" Margin="-54,60,271,244" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-10.037"/>
+                    <RotateTransform Angle="-25.87"/>
+                    <TranslateTransform X="13.053" Y="26.917"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+
+        <Button x:Name="ButtonStateMin" Content="—" Style="{StaticResource ButtonTitleStyle}" Click="ButtonStateMin_Click" Margin="0,0,40,0"/>
+        <Button x:Name="ButtonExit" Content="✕" Style="{StaticResource ButtonTitleStyle}" Click="ButtonExit_Click"/>
+
+        <Label Style="{StaticResource LabelStyle2}" Content="{x:Static res:Language.Label1}" Margin="32,41,0,0" VerticalAlignment="Top" FontSize="17" HorizontalAlignment="Left" Width="256"/>
+        <Label Style="{StaticResource LabelStyle2}" Content="{x:Static res:Language.Label2}" Margin="32,71,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256" FontFamily="Arial"/>
+
+        <Label Content="{x:Static res:Language.LabelLogin}" Margin="32,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256"/>
+        <TextBox x:Name="TextBoxLogin" Style="{StaticResource TextBoxLoginStyle}" Margin="32,150,0,0" TextChanged="TextBoxLogin_TextChanged" MaxLength="30" PreviewTextInput="TextBoxLogin_PreviewTextInput"/>
+
+        <Label Content="{x:Static res:Language.LabelPassword}" Margin="32,186,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256"/>
+        <PasswordBox x:Name="TextBoxPassword" Style="{StaticResource TextBoxPasswordStyle}" Margin="32,216,0,0" PasswordChanged="TextBoxPassword_PasswordChanged" PreviewTextInput="TextBoxPassword_PreviewTextInput"/>
+
+        <CheckBox x:Name="CheckBoxRememberMe" Content="{x:Static res:Language.CheckBoxRememberMe}" Foreground="{StaticResource Foreground}" HorizontalAlignment="Left" Margin="32,244,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" BorderBrush="{StaticResource MainBackground}"/>
+        <Button x:Name="ButtonSignIn" Content="{x:Static res:Language.ButtonSignIn}" Style="{StaticResource ButtonSignInStyle}" Click="ButtonSignIn_Click"/>
+
+        <Label Height="30" Margin="32,320,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="256" FontFamily="Segoe UI Light">
+            <TextBlock x:Name="LabelConnection" Text="{x:Static res:Language.LabelConnection}" ToolTip="{x:Static res:Language.LabelConnectionToolTip}" Foreground="#FF569EE5" TextDecorations="Underline" Cursor="Hand" MouseDown="LabelConnection_MouseDown" FontFamily="Segoe UI"/>
+        </Label>        
+    </Grid>
+</Window>

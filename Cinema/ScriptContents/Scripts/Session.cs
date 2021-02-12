@@ -6,13 +6,13 @@ namespace Scripts
     {
         #region Variables
 
-        public string Film { protected set; get; }
+        public Film Film { protected set; get; }
 
         public DateTime SessionData { protected set; get; }
 
         public DateTime SessionTime { protected set; get; }
 
-        public string Hall { protected set; get; }
+        public Hall Hall { protected set; get; }
 
         public float Price { protected set; get; }
 
@@ -24,19 +24,19 @@ namespace Scripts
 
         public Session()
         {
-            Input(0, "", DateTime.MinValue, DateTime.MinValue, "", 0);
+            Input(id: 0, film: new Film(), sessionData: DateTime.MinValue, sessionTime: DateTime.MinValue, hall: new Hall(), price: 0);
         }
 
-        public Session(uint id, string film, DateTime sessionData, DateTime sessionTime, string hall, float price)
+        public Session(uint id, Film film, DateTime sessionData, DateTime sessionTime, Hall hall, float price)
         {
-            Input(id, film, sessionData, sessionTime, hall, price);
+            Input(id: id, film: film, sessionData: sessionData, sessionTime: sessionTime, hall: hall, price: price);
         }
 
         #endregion
 
         #region Public Methods
 
-        public void Input(uint id, string film, DateTime sessionData, DateTime sessionTime, string hall, float price)
+        public void Input(uint id, Film film, DateTime sessionData, DateTime sessionTime, Hall hall, float price)
         {
             Id = id;
             Film = film;

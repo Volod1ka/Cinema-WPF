@@ -7,14 +7,6 @@ namespace Cinema
 {
     public partial class LoginWindow : Window
     {
-        #region Variables
-        
-        private readonly byte MinLengthLog = 4;
-        
-        private readonly byte MinLengthPas = 7;
-
-        #endregion
-
         #region Constructors
         
         public LoginWindow()
@@ -105,7 +97,7 @@ namespace Cinema
 
         private void AccessToUsignIn()
         {
-            ButtonSignIn.IsEnabled = TextBoxLogin.Text.Length >= MinLengthLog && TextBoxPassword.Password.Length >= MinLengthPas;
+            ButtonSignIn.IsEnabled = TextBoxLogin.Text.Length >= Properties.Settings.Default.MinLoginLength && TextBoxPassword.Password.Length >= Properties.Settings.Default.MinPasswordLength;
         }
         
         private void ClearAllTextBox()
@@ -120,7 +112,6 @@ namespace Cinema
             try
             {
                 Window main = new MainWindow();
-
                 main.Show();
 
                 if (!CheckBoxRememberMe.IsChecked.Value)

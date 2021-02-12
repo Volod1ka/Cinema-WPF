@@ -101,7 +101,7 @@ namespace Cinema
             {
                 MenuUserName.Header = $"{Scripts.Account.UserName}";//\xE77B
 
-                UpdateTicketsInfo();
+                Scripts.Engine.RefreshDataTickets(out tickets);
                 UpdateDataGridSessions();
             }
             catch (Exception ex)
@@ -163,7 +163,7 @@ namespace Cinema
 
             if (!GridTicketsLeftIsVisible)
             {
-                newWidth = this.MinWidth * 0.25f/*190*/;
+                newWidth = this.MinWidth * 0.64f;//0.25f/*190*/;
             }
             else
             {
@@ -192,7 +192,7 @@ namespace Cinema
 
         private void MenuItemRefresh_Click(object sender, RoutedEventArgs e)
         {
-            UpdateTicketsInfo();
+            Scripts.Engine.RefreshDataTickets(out tickets);
             UpdateDataGridSessions();
 
             InsertInfoTicketsCount(SellTickets: "", ToBookTickets: "", LastTickets: "");
@@ -315,37 +315,27 @@ namespace Cinema
         }
 
         private void UpdateComboBox()
-        { 
-            ComboBoxFilms.ItemsSource =
+        {
+            DateTime dateTimeNow = DateTime.Now;
+            ComboBoxFilms.ItemsSource =            
             (
                 from value
                     in tickets
-                group value by new { value.Film }
+                where value.Session.SessionData.AddHours(value.Session.SessionTime.Hour).AddMinutes(value.Session.SessionTime.Minute + 15) >= dateTimeNow
+                group value by new { value.Session.Film.Name }
                     into newGroup
-                select newGroup.FirstOrDefault().Film
-            ).ToList<string>();
+                select newGroup.FirstOrDefault().Session.Film.Name
+            );
 
             ComboBoxHalls.ItemsSource =
             (
                 from value
                     in tickets
-                group value by new { value.Hall }
+                where value.Session.SessionData.AddHours(value.Session.SessionTime.Hour).AddMinutes(value.Session.SessionTime.Minute + 15) >= dateTimeNow
+                group value by new { value.Session.Hall.Name }
                     into newGroup
-                select newGroup.FirstOrDefault().Hall
-            ).ToList<string>();
-        }
-
-        private void UpdateTicketsInfo()
-        {
-            tickets.Clear();
-
-            Thread STAThread = new Thread(
-                delegate ()
-                {
-                    tickets = Scripts.Data.DataBaseManager.GetListTickets();
-                });
-            STAThread.Start();
-            STAThread.Join();
+                select newGroup.FirstOrDefault().Session.Hall.Name
+            );
         }
 
         private void UpdateDataGridTickets()
@@ -356,14 +346,17 @@ namespace Cinema
             {
                 string searchTicket = TextBoxSearchTickets.Text;
                 var cellInfo = GridSessions.SelectedCells[index].Item as Scripts.Ticket;
-                var tableTickets =
-                (
-                    from value
-                        in tickets
-                    where value.Film == cellInfo.Film && value.SessionData == cellInfo.SessionData && value.SessionTime == cellInfo.SessionTime
-                    && (value.Row.ToString().Contains(searchTicket) || value.Seat.ToString().Contains(searchTicket))
-                    select value
-                ).ToList<Scripts.Ticket>();
+                var tableTickets = Scripts.Engine.RefreshDataGrid(() =>
+                {
+                    return
+                    (
+                        from value
+                            in tickets
+                        where value.Session.Film.Name == cellInfo.Session.Film.Name && value.Session.SessionData == cellInfo.Session.SessionData && value.Session.SessionTime == cellInfo.Session.SessionTime
+                        && (value.Row.ToString().Contains(searchTicket) || value.Seat.ToString().Contains(searchTicket))
+                        select value
+                    );
+                });
 
                 GridTickets.ItemsSource = tableTickets;
 
@@ -383,7 +376,7 @@ namespace Cinema
                     select value
                 ).Count();
 
-                InsertInfoTicketsCount(SellTickets: $"{Math.Max(sellTickets, 0)}", ToBookTickets: $"{Math.Max(toBookTickets, 0)}", LastTickets: $"{Math.Max(tableTickets.Count - sellTickets - toBookTickets, 0)}");
+                InsertInfoTicketsCount(SellTickets: $"{Math.Max(sellTickets, 0)}", ToBookTickets: $"{Math.Max(toBookTickets, 0)}", LastTickets: $"{Math.Max(tableTickets.Count() - sellTickets - toBookTickets, 0)}");
             }
             else
             {
@@ -404,19 +397,22 @@ namespace Cinema
             string hall = ComboBoxHalls.SelectedIndex < 0 ? "" : ComboBoxHalls.SelectedItem.ToString();
             string searchSession = TextBoxSearchSessions.Text;
 
-            GridSessions.ItemsSource =
-            (
-                from value
-                    in tickets
-                    where value.SessionData.AddHours(value.SessionTime.Hour).AddMinutes(value.SessionTime.Minute + 15) >= DateTime.Now &&
-                          (value.SessionData.ToShortDateString().Contains(searchSession) ||
-                          value.SessionTime.ToShortTimeString().Contains(searchSession) ||
-                          value.Price.ToString().Contains(searchSession))
-                group value by new { value.Film, value.Hall, value.SessionData, value.SessionTime }
-                    into newGroup
-                where newGroup.Key.Film == film && newGroup.Key.Hall == hall
-                select newGroup.FirstOrDefault()
-            );
+            GridSessions.ItemsSource = Scripts.Engine.RefreshDataGrid(() =>
+            {
+                return
+                (
+                   from value
+                       in tickets
+                   where value.Session.SessionData.AddHours(value.Session.SessionTime.Hour).AddMinutes(value.Session.SessionTime.Minute + 15) >= DateTime.Now &&
+                      (value.Session.SessionData.ToShortDateString().Contains(searchSession) ||
+                      value.Session.SessionTime.ToShortTimeString().Contains(searchSession) ||
+                      value.Session.Price.ToString().Contains(searchSession))
+                   group value by new { Film = value.Session.Film.Name, Hall = value.Session.Hall.Name, value.Session.SessionData, value.Session.SessionTime }
+                       into newGroup
+                   where newGroup.Key.Film == film && newGroup.Key.Hall == hall
+                   select newGroup.FirstOrDefault()
+               );
+            });
         }
 
         private void ChangeUser(bool message = true)
@@ -440,7 +436,7 @@ namespace Cinema
             {
                 var cellInfo = GridTickets.SelectedCells[index].Item as Scripts.Ticket;
 
-                if (cellInfo.SessionData.AddHours(cellInfo.SessionTime.Hour).AddMinutes(cellInfo.SessionTime.Minute + 15) >= DateTime.Now)
+                if (cellInfo.Session.SessionData.AddHours(cellInfo.Session.SessionTime.Hour).AddMinutes(cellInfo.Session.SessionTime.Minute + 15) >= DateTime.Now)
                 {
                     result = isSell ? Scripts.Data.DataBaseManager.SellTicket(ticket: cellInfo.Id) : Scripts.Data.DataBaseManager.BackTicket(ticket: cellInfo.Id);
                 }
@@ -465,13 +461,10 @@ namespace Cinema
                     cellInfo.Input
                         (
                             id: cellInfo.Id,
-                            film: cellInfo.Film,
-                            sessionData: cellInfo.SessionData,
-                            sessionTime: cellInfo.SessionTime,
-                            hall: cellInfo.Hall,
+                            session: cellInfo.Session,
+                            dataCreate: cellInfo.DataCreate,
                             row: cellInfo.Row,
                             seat: cellInfo.Seat,
-                            price: cellInfo.Price,
                             isPaid: isPaid,
                             isToBook: isToBook
                         );

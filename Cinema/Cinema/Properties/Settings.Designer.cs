@@ -58,5 +58,23 @@ namespace Cinema.Properties {
                 this["isRememberMe"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public int MinLoginLength {
+            get {
+                return ((int)(this["MinLoginLength"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public int MinPasswordLength {
+            get {
+                return ((int)(this["MinPasswordLength"]));
+            }
+        }
     }
 }

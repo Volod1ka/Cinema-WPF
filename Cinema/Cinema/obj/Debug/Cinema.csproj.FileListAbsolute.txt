@@ -84,14 +84,11 @@ D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\bin\Debug\System.Bu
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\bin\Debug\System.Memory.xml
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\bin\Debug\System.Numerics.Vectors.xml
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Styles\Resources.baml
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Windows\LoginWindow.g.cs
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Windows\MainWindow.g.cs
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\App.g.cs
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Cinema_MarkupCompile.cache
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Cinema_MarkupCompile.lref
-D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\App.baml
-D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Styles\Styles.baml
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Windows\LoginWindow.baml
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Windows\MainWindow.baml
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Cinema.g.resources
@@ -102,8 +99,6 @@ D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Cinema.cs
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Cinema.csproj.CopyComplete
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Cinema.exe
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Cinema.pdb
-D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Windows\AdminWindow.g.cs
-D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Windows\AdminWindow.baml
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Cinema.csprojAssemblyReference.cache
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\bin\Debug\ScriptsContent.dll
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\bin\Debug\ScriptsContent.pdb
@@ -111,3 +106,6 @@ D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\bin\Debug\MySql.Dat
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\bin\Debug\Ubiety.Dns.Core.dll
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\bin\Debug\Zstandard.Net.dll
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\bin\Debug\MySql.Data.xml
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\App.baml
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Styles\Resources.baml
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\obj\Debug\Styles\Styles.baml

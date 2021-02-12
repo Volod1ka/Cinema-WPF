@@ -61,7 +61,7 @@ namespace Cinema.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на SERVER=localhost;DATABASE=cinema;UID=DBCinema;PASSWORD=HGQ35JDUK5@V4mqL;.
+        ///   Ищет локализованную строку, похожую на DATASOURCE=192.168.0.106;PORT=3306;DATABASE=cinema;UID=DBCinema;PASSWORD=HGQ35JDUK5@V4mqL;.
         /// </summary>
         internal static string ConnectString {
             get {

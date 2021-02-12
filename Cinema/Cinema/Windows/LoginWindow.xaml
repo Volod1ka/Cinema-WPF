@@ -54,13 +54,13 @@
         <Button x:Name="ButtonStateMin" Content="—" Style="{StaticResource ButtonTitleStyle}" Click="ButtonStateMin_Click" Margin="0,0,40,0"/>
         <Button x:Name="ButtonExit" Content="✕" Style="{StaticResource ButtonTitleStyle}" Click="ButtonExit_Click"/>
 
-        <Label Content="{x:Static res:Language.Label1}" Foreground="{StaticResource MainForeground}" Height="30" Margin="32,41,0,0" VerticalAlignment="Top" FontSize="17" HorizontalAlignment="Left" Width="256"/>
-        <Label Content="{x:Static res:Language.Label2}" Foreground="{StaticResource MainForeground}" Height="30" Margin="32,71,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256" FontFamily="Arial"/>
+        <Label Style="{StaticResource LabelStyle2}" Content="{x:Static res:Language.Label1}" Margin="32,41,0,0" VerticalAlignment="Top" FontSize="17" HorizontalAlignment="Left" Width="256"/>
+        <Label Style="{StaticResource LabelStyle2}" Content="{x:Static res:Language.Label2}" Margin="32,71,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256" FontFamily="Arial"/>
 
-        <Label Content="{x:Static res:Language.LabelLogin}" Foreground="{StaticResource Foreground}" Height="30" Margin="32,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256"/>
+        <Label Content="{x:Static res:Language.LabelLogin}" Margin="32,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256"/>
         <TextBox x:Name="TextBoxLogin" Style="{StaticResource TextBoxLoginStyle}" Margin="32,150,0,0" TextChanged="TextBoxLogin_TextChanged" MaxLength="30" PreviewTextInput="TextBoxLogin_PreviewTextInput"/>
 
-        <Label Content="{x:Static res:Language.LabelPassword}" Foreground="{StaticResource Foreground}" Height="30" Margin="32,186,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256"/>
+        <Label Content="{x:Static res:Language.LabelPassword}" Margin="32,186,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256"/>
         <PasswordBox x:Name="TextBoxPassword" Style="{StaticResource TextBoxPasswordStyle}" Margin="32,216,0,0" PasswordChanged="TextBoxPassword_PasswordChanged" PreviewTextInput="TextBoxPassword_PreviewTextInput"/>
 
         <CheckBox x:Name="CheckBoxRememberMe" Content="{x:Static res:Language.CheckBoxRememberMe}" Foreground="{StaticResource Foreground}" HorizontalAlignment="Left" Margin="32,244,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" BorderBrush="{StaticResource MainBackground}"/>

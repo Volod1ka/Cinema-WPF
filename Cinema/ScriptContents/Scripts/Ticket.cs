@@ -6,19 +6,13 @@ namespace Scripts
     {
         #region Variables
 
-        public string Film {protected set; get; }
+        public DateTime DataCreate { protected set; get; }
 
-        public DateTime SessionData { protected set; get; }
-
-        public DateTime SessionTime { protected set; get; }
-
-        public string Hall { protected set; get; }
+        public Session Session { protected set; get; }
 
         public uint Row { protected set; get; }
 
         public uint Seat { protected set; get; }
-
-        public float Price { protected set; get; }
 
         public bool IsPaid { protected set; get; }
 
@@ -32,28 +26,25 @@ namespace Scripts
 
         public Ticket()
         {
-            Input(0, "", DateTime.MinValue, DateTime.MinValue, "", 0, 0, 0);
+            Input(id: 0, dataCreate: DateTime.MinValue, session: new Session(), row: 0, seat: 0);
         }
 
-        public Ticket(uint id, string film, DateTime sessionData, DateTime sessionTime, string hall, uint row, uint seat, float price, bool isPaid = false, bool isToBook = false)
+        public Ticket(uint id, DateTime dataCreate, Session session, uint row, uint seat, bool isPaid = false, bool isToBook = false)
         {
-            Input(id, film, sessionData, sessionTime, hall, row, seat, price, isPaid, isToBook);
+            Input(id: id, dataCreate: dataCreate, session: session, row: row, seat: seat, isPaid, isToBook);
         }
 
         #endregion
 
         #region Public Methods
 
-        public void Input(uint id, string film, DateTime sessionData, DateTime sessionTime, string hall, uint row, uint seat, float price, bool isPaid = false, bool isToBook = false)
+        public void Input(uint id, DateTime dataCreate, Session session, uint row, uint seat, bool isPaid = false, bool isToBook = false)
         {
             Id = id;
-            Film = film;
-            SessionData = sessionData;
-            SessionTime = sessionTime;
-            Hall = hall;
+            DataCreate = dataCreate;
+            Session = session;
             Row = row;
             Seat = seat;
-            Price = price;
             IsPaid = isPaid;
             IsToBook = isToBook;
         }

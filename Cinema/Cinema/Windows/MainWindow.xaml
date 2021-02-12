@@ -57,7 +57,7 @@
             <!--#FF1E0A3C-->
             <Grid Margin="0,40,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition x:Name="GridLeft" Width="190"></ColumnDefinition>
+                    <ColumnDefinition x:Name="GridLeft" Width="290"></ColumnDefinition>
                     <ColumnDefinition x:Name="GridRight"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
@@ -66,32 +66,33 @@
                 <Rectangle Grid.Column="0" Fill="{StaticResource MainBackground}" Margin="0,0,2,0"/>
                 <Rectangle Grid.Column="0" Fill="{StaticResource ShadowColor}" Margin="0,4,0,0" HorizontalAlignment="Right" Width="2"/>
 
-                <Label Grid.Column="0" Content="{x:Static res:Language.LabelFilmName}" Foreground="{StaticResource Foreground}" Height="30" Margin="10,12,10,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="ComboBoxFilms"  Grid.Column="0" Margin="10,42,10,0" VerticalAlignment="Top" SelectionChanged="ComboBoxFilms_SelectionChanged"/>
+                <Label Grid.Column="0" Style="{StaticResource LabelStyle2}"  Content="{x:Static res:Language.LabelFilmName}" Margin="10,12,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="106"/>
+                <ComboBox Grid.Column="0" x:Name="ComboBoxFilms" Margin="121,15,10,0" VerticalAlignment="Top" SelectionChanged="ComboBoxFilms_SelectionChanged"/>
 
-                <Label Grid.Column="0" Content="{x:Static res:Language.LabelHallName}" Foreground="{StaticResource Foreground}" Height="30" Margin="13,72,7,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="ComboBoxHalls" Grid.Column="0" Margin="10,102,10,0" VerticalAlignment="Top" SelectionChanged="ComboBoxFilms_SelectionChanged"/>
+                <Label Grid.Column="0" Style="{StaticResource LabelStyle2}" Content="{x:Static res:Language.LabelHallName}" Margin="10,47,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="106"/>
+                <ComboBox Grid.Column="0" x:Name="ComboBoxHalls" Margin="121,50,10,0" VerticalAlignment="Top" SelectionChanged="ComboBoxFilms_SelectionChanged"/>
                 <!-- <Label.ToolTip>
                         <Grid Background="{StaticResource MainBackground}">
                             <TextBlock Text="{x:Static local: Account.UserName}"></TextBlock>
                         </Grid>
                     </Label.ToolTip>-->
-                
-                
+
+
                 <!-- Grid.Column="1" -->
-                <Label Grid.Column="1" Content="{x:Static res:Language.LabelSession}" Foreground="{StaticResource Foreground}" Height="30" Margin="10,12,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
+                <Label Grid.Column="1" Style="{StaticResource LabelStyle1}" Content="{x:Static res:Language.LabelSession}" Margin="10,12,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
                 <Grid Grid.Column="1" x:Name="GridSearchSessions" Height="30" Margin="175,12,282,0" VerticalAlignment="Top" Background="Transparent">
                     <Label Content="&#xF78B;" Style="{StaticResource LabelIconStyle}" HorizontalAlignment="Left" Width="30"/>
                     <Label Content="{x:Static res:Language.LabelFind}" Style="{StaticResource LabelIconStyle}" FontFamily="Segoe UI" HorizontalContentAlignment="Left"  Margin="30,0,0,0"/>
                 </Grid>
-                <TextBox Grid.Column="1" x:Name="TextBoxSearchSessions" Style="{StaticResource TextBoxSearchStyle}" IsReadOnly="False" Margin="175,12,282,0" VerticalAlignment="Top" Width="Auto" TextChanged="TextBoxSearchSessions_TextChanged" GotFocus="TextBoxSearchSessions_GotFocus" LostFocus="TextBoxSearchSessions_LostFocus"/>
+                <TextBox Grid.Column="1" x:Name="TextBoxSearchSessions" Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="175,12,282,0" VerticalAlignment="Top" Width="Auto" TextChanged="TextBoxSearchSessions_TextChanged" GotFocus="TextBoxSearchSessions_GotFocus" LostFocus="TextBoxSearchSessions_LostFocus"/>
+                
                 <DataGrid x:Name="GridSessions" Grid.Column="1" Style="{StaticResource DataGridStyle}" Margin="10,47,282,49" SelectedCellsChanged="GridSessions_SelectedCellsChanged">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnSessionData}" Binding="{Binding Path=SessionData, StringFormat=\{0:dd.MM.yyyy\}}"/>
-                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnSessionTime}" Binding="{Binding Path=SessionTime, StringFormat=\{0:HH:mm\}}"/>
-                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnFilm}" Binding="{Binding Path=Film}"/>
-                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnHall}" Binding="{Binding Path=Hall}"/>
-                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnPrice}" Binding="{Binding Path=Price}"/>
+                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnSessionData}" Binding="{Binding Path=Session.SessionData, StringFormat=\{0:dd.MM.yyyy\}}"/>
+                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnSessionTime}" Binding="{Binding Path=Session.SessionTime, StringFormat=\{0:HH:mm\}}"/>
+                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnFilm}" Binding="{Binding Path=Session.Film.Name}"/>
+                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnHall}" Binding="{Binding Path=Session.Hall.Name}"/>
+                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnPrice}" Binding="{Binding Path=Session.Price}"/>
                     </DataGrid.Columns>
                     <DataGrid.ContextMenu>
                         <ContextMenu Style="{StaticResource ContextMenuStyle}">
@@ -101,12 +102,13 @@
                 </DataGrid>
 
 
-                <Label Grid.Column="1" Content="{x:Static res:Language.LabelTicket}" Foreground="{StaticResource Foreground}" Height="30" Margin="0,12,131,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="130"/>
+                <Label Grid.Column="1" Style="{StaticResource LabelStyle1}" Content="{x:Static res:Language.LabelTicket}" Margin="0,12,131,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="130"/>
                 <Grid Grid.Column="1" x:Name="GridSearchTickets" Height="30" Margin="0,12,10,0" VerticalAlignment="Top" Background="Transparent" HorizontalAlignment="Right" Width="116">
                     <Label Content="&#xF78B;" Style="{StaticResource LabelIconStyle}" HorizontalAlignment="Left" Width="30"/>
                     <Label Content="{x:Static res:Language.LabelFind}" Style="{StaticResource LabelIconStyle}" FontFamily="Segoe UI" HorizontalContentAlignment="Left"  Margin="30,0,0,0"/>
                 </Grid>
-                <TextBox Grid.Column="1" x:Name="TextBoxSearchTickets"  Style="{StaticResource TextBoxSearchStyle}" IsReadOnly="False" Margin="0,12,10,0" VerticalAlignment="Top" Width="116" HorizontalAlignment="Right" TextChanged="TextBoxSearchTickets_TextChanged" GotFocus="TextBoxSearchTickets_GotFocus" LostFocus="TextBoxSearchTickets_LostFocus"/>
+                <TextBox Grid.Column="1" x:Name="TextBoxSearchTickets"  Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="0,12,10,0" VerticalAlignment="Top" Width="116" HorizontalAlignment="Right" TextChanged="TextBoxSearchTickets_TextChanged" GotFocus="TextBoxSearchTickets_GotFocus" LostFocus="TextBoxSearchTickets_LostFocus"/>
+                
                 <DataGrid x:Name="GridTickets" Grid.Column="1" Style="{StaticResource DataGridStyle}" ContextMenuOpening="GridTickets_ContextMenuOpening" ContextMenuClosing="GridTickets_ContextMenuClosing" Margin="0,47,10,154" HorizontalAlignment="Right" Width="252" HorizontalScrollBarVisibility="Hidden">
                     <DataGrid.Columns>
                         <!--<DataGridCheckBoxColumn Header="Temp"   IsThreeState="{Binding IsPaid}"/> -->
@@ -127,17 +129,17 @@
                     </DataGrid.ContextMenu>
                 </DataGrid>
 
-                <Label Grid.Column="1" Content="{x:Static res:Language.LabelSellTickets}" Foreground="{StaticResource Foreground}" Margin="0,0,82,119" HorizontalAlignment="Right" Width="180" Height="30" VerticalAlignment="Bottom"/>
+                <Label Grid.Column="1" Style="{StaticResource LabelStyle1}" Content="{x:Static res:Language.LabelSellTickets}" Margin="0,0,82,119" HorizontalAlignment="Right" Width="180" VerticalAlignment="Bottom"/>
                 <TextBox Grid.Column="1" x:Name="TextBoxSellTickets"  Style="{StaticResource TextBoxCounterStyle}" Margin="0,0,10,119" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Label Grid.Column="1"  Content="{x:Static res:Language.LabelToBookTickets}" Foreground="{StaticResource Foreground}" Height="30" Margin="0,0,82,84" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="180"/>
+                <Label Grid.Column="1" Style="{StaticResource LabelStyle1}" Content="{x:Static res:Language.LabelToBookTickets}" Margin="0,0,82,84" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="180"/>
                 <TextBox Grid.Column="1" x:Name="TextBoxToBookTickets"  Style="{StaticResource TextBoxCounterStyle}" Margin="0,0,10,84" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
-                <Label Grid.Column="1" Content="{x:Static res:Language.LabelLastTickets}" Foreground="{StaticResource Foreground}" Height="30" Margin="0,0,82,49" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="180"/>
+                <Label Grid.Column="1" Style="{StaticResource LabelStyle1}" Content="{x:Static res:Language.LabelLastTickets}" Margin="0,0,82,49" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="180"/>
                 <TextBox Grid.Column="1" x:Name="TextBoxLastTickets"  Style="{StaticResource TextBoxCounterStyle}" Margin="0,0,10,49" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
 
                 <Border Grid.Column="1" CornerRadius="0,0,10,10" Height="44" VerticalAlignment="Bottom">
                     <Grid>
                         <Rectangle Fill="{StaticResource ShadowColor}" Height="4" VerticalAlignment="Top" Margin="0,0,0,0"/>
-                        <Label x:Name="LabelDateTime" Content="{x:Static res:Language.LabelDateTime}" Margin="10,9,0,5" HorizontalAlignment="Left" Width="192" Foreground="{StaticResource Foreground}"/>
+                        <Label x:Name="LabelDateTime" Style="{StaticResource LabelStyle1}" Content="{x:Static res:Language.LabelDateTime}" Margin="10,9,0,5" HorizontalAlignment="Left" Width="192"/>
                     </Grid>
                 </Border>
             </Grid>

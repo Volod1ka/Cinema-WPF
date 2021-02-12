@@ -1,0 +1,310 @@
+[12.02.2021 0:58:15]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 0:58:15]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 0:58:38]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 0:58:38]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+
+[12.02.2021 1:01:45]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:01:45]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:02:05]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:02:05]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+
+[12.02.2021 1:05:24]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:05:24]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:06:57]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:06:57]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:07:47]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:09:21]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+
+[12.02.2021 1:21:03]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+
+[12.02.2021 1:33:06]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:33:06]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:33:47]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:33:47]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:33:50]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:33:50]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:33:51]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:33:51]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:33:53]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:33:53]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:33:55]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:33:55]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:33:58]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:33:58]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:34:18]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:34:18]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:34:21]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:34:21]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:34:22]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:34:22]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:34:33]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:34:33]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:37:27]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:37:27]=>[Error]: System.NullReferenceException: Ссылка на объект не указывает на экземпляр объекта.
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 184
+[12.02.2021 1:37:41]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:37:41]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+
+[12.02.2021 1:41:25]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:41:25]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+[12.02.2021 1:41:27]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[12.02.2021 1:41:27]=>[Error]: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.Registration(User user) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 189
+
+[12.02.2021 15:58:14]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+
+[12.02.2021 17:49:05]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в CinemaAdmin.AdminWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\Windows\AdminWindow.xaml.cs:строка 181
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+
+[12.02.2021 17:52:37]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в CinemaAdmin.AdminWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\Windows\AdminWindow.xaml.cs:строка 181
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
