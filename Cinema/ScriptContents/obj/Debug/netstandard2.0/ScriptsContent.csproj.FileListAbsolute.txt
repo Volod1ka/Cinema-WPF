@@ -6,3 +6,4 @@ D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\obj\Debug\n
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\obj\Debug\netstandard2.0\ScriptsContent.csproj.CoreCompileInputs.cache
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\obj\Debug\netstandard2.0\ScriptsContent.dll
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\obj\Debug\netstandard2.0\ScriptsContent.pdb
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\obj\Debug\netstandard2.0\ScriptsContent.csprojAssemblyReference.cache

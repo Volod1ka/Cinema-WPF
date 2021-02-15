@@ -168,14 +168,16 @@ namespace Scripts.Data
         {
             Status result = Status.Forbidden;
 
-            try
+            CheckAccess(() => 
             {
                 if (LoginExists(user.Login))
                 {
-                    return Status.LoginExists;
+                    result = Status.LoginExists;
                 }
-                else if (DataBaseConnection.ConnectionOpen())
+                else
                 {
+                    DataBaseConnection.ConnectionOpen();
+
                     string query = "INSERT INTO `employees`(`name_employee`, `job_post`, `login`, `password`, `is_active`) VALUES (@n, @j, @l, @p, @a)";
 
                     MySqlCommand sqlCommand = new MySqlCommand(query, DataBaseConnection.DBSqlConnection);
@@ -188,17 +190,7 @@ namespace Scripts.Data
 
                     result = sqlCommand.ExecuteNonQuery() > 0 ? Status.OK : Status.Forbidden;
                 }
-            }
-            catch (Exception ex)
-            {
-                LogFile.Log($"{ex}", "Error");
-
-                result = Status.Forbidden;
-            }
-            finally
-            {
-                DataBaseConnection.ConnectionClose();
-            }
+            });
 
             return result;
         }
@@ -207,10 +199,16 @@ namespace Scripts.Data
         {
             Status result = Status.Forbidden;
 
-            try
+            CheckAccess(() =>
             {
-                if (DataBaseConnection.ConnectionOpen())
+                if (LoginExists(user.Login))
                 {
+                    result = Status.LoginExists;
+                }
+                else
+                {
+                    DataBaseConnection.ConnectionOpen();
+
                     string query =
                     @"
                     UPDATE employees
@@ -229,17 +227,235 @@ namespace Scripts.Data
 
                     result = sqlCommand.ExecuteNonQuery() > 0 ? Status.OK : Status.Forbidden;
                 }
-            }
-            catch (Exception ex)
-            {
-                LogFile.Log($"{ex}", "Error");
+            });
 
-                result = Status.Forbidden;
-            }
-            finally
+            return result;
+        }
+
+        public static Status AddHallAndSeats(Hall hall)
+        {
+            Status result = Status.Forbidden;
+
+            CheckAccess(() =>
             {
-                DataBaseConnection.ConnectionClose();
-            }
+                string query =
+                @"
+                INSERT INTO halls(hall_name, count_rows, count_seats) VALUES (@N, @R, @S);
+                SELECT id_hall FROM halls WHERE hall_name = @N AND count_rows = @R AND count_seats = @S;
+                ";
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, DataBaseConnection.DBSqlConnection);
+
+                sqlCommand.Parameters.AddWithValue("N", hall.Name);
+                sqlCommand.Parameters.AddWithValue("R", hall.Rows);
+                sqlCommand.Parameters.AddWithValue("S", hall.Seats);
+
+                MySqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    hall.Input(id: uint.Parse(dataReader[0].ToString()), name: hall.Name, rows: hall.Rows, seats: hall.Seats);
+                }
+
+                dataReader.Close();
+
+                sqlCommand.Parameters.Clear();
+
+                query = @"INSERT INTO seats(id_hall, row, seat) VALUES ";
+
+                uint seats = hall.Rows * hall.Seats;
+
+                for (int i = 1, counter = 0; i <= hall.Rows; i++)
+                {
+                    for (int j = 1; j <= hall.Seats; j++)
+                    {
+                        query += $"({hall.Id},{i},{j})";
+
+                        if (++counter < seats)
+                        {
+                            query += ",";
+                        }
+                    }
+                }
+
+                sqlCommand = new MySqlCommand(query, DataBaseConnection.DBSqlConnection);
+                result = sqlCommand.ExecuteNonQuery() > 0 ? Status.OK : Status.Forbidden;
+            });
+
+            return result;
+        }
+
+        public static Status UpdateHall(Hall hall)
+        {
+            Status result = Status.Forbidden;
+
+            CheckAccess(() =>
+            {
+                string query = @"UPDATE halls SET hall_name = @N, count_rows = @R, count_seats = @S WHERE id_hall = @ID";
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, DataBaseConnection.DBSqlConnection);
+
+                sqlCommand.Parameters.AddWithValue("N", hall.Name);
+                sqlCommand.Parameters.AddWithValue("R", hall.Rows);
+                sqlCommand.Parameters.AddWithValue("S", hall.Seats);
+                sqlCommand.Parameters.AddWithValue("ID", hall.Id);
+
+                result = sqlCommand.ExecuteNonQuery() > 0 ? Status.OK : Status.Forbidden;
+            });
+
+            return result;
+        }
+
+        public static Status AddFilm(Film film)
+        {
+            Status result = Status.Forbidden;
+
+            CheckAccess(() =>
+            {
+                string query = @"INSERT INTO films(film_name, duration, start_data, end_data) VALUES (@N, @D, @SD, @ED)";
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, DataBaseConnection.DBSqlConnection);
+
+                sqlCommand.Parameters.AddWithValue("N", film.Name);
+                sqlCommand.Parameters.AddWithValue("D", film.Duration);
+                sqlCommand.Parameters.AddWithValue("SD", film.StartData);
+                sqlCommand.Parameters.AddWithValue("ED", film.EndData);
+
+                result = sqlCommand.ExecuteNonQuery() > 0 ? Status.OK : Status.Forbidden;
+            });
+
+            return result;
+        }
+
+        public static Status UpdateFilm(Film film)
+        {
+            Status result = Status.Forbidden;
+
+            CheckAccess(() =>
+            {
+                string query = @"UPDATE films SET film_name = @N, duration = @D, start_data = @SD, end_data = @ED WHERE id_film = @ID";
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, DataBaseConnection.DBSqlConnection);
+
+                sqlCommand.Parameters.AddWithValue("N", film.Name);
+                sqlCommand.Parameters.AddWithValue("D", film.Duration);
+                sqlCommand.Parameters.AddWithValue("SD", film.StartData);
+                sqlCommand.Parameters.AddWithValue("ED", film.EndData);
+                sqlCommand.Parameters.AddWithValue("ID", film.Id);
+
+                result = sqlCommand.ExecuteNonQuery() > 0 ? Status.OK : Status.Forbidden;
+            });
+
+            return result;
+        }
+
+        public static Status AddSessionAndTickets(Session session)
+        {
+            Status result = Status.Forbidden;
+
+            CheckAccess(() =>
+            {
+                string query =
+                @"
+                INSERT INTO sessions(id_hall, session_data, session_time, id_film, price)
+                VALUES (@H, @SD, @ST, @F, @P);
+                SELECT id_session FROM sessions
+                WHERE id_hall = @H AND session_data = @SD AND session_time = @ST AND id_film = @F AND price = @P;
+                ";
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, DataBaseConnection.DBSqlConnection);
+
+                sqlCommand.Parameters.AddWithValue("H", session.Hall.Id);
+                sqlCommand.Parameters.AddWithValue("SD", session.SessionData);
+                sqlCommand.Parameters.AddWithValue("ST", session.SessionTime);
+                sqlCommand.Parameters.AddWithValue("F", session.Film.Id);
+                sqlCommand.Parameters.AddWithValue("P", session.Price);
+
+                MySqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    session.Input
+                    (
+                        id: uint.Parse(dataReader[0].ToString()),
+                        film: session.Film,
+                        sessionData: session.SessionData,
+                        sessionTime: session.SessionTime,
+                        hall: session.Hall,
+                        price: session.Price
+                    );
+
+                    result = Status.OK;
+                }
+
+                dataReader.Close();
+                sqlCommand.Parameters.Clear();
+
+                uint seats = session.Hall.Rows * session.Hall.Seats;
+                uint[] idSeats = new uint[seats];
+                uint iteration = 0;
+
+                query = @"SELECT id_place FROM seats WHERE id_hall = @H";
+
+                sqlCommand = new MySqlCommand(query, DataBaseConnection.DBSqlConnection);
+
+                sqlCommand.Parameters.AddWithValue("H", session.Hall.Id);
+
+                dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    idSeats[iteration++] = uint.Parse(dataReader[0].ToString());
+                }
+
+                dataReader.Close();
+                sqlCommand.Parameters.Clear();
+
+                query = @"INSERT INTO tickets(data_create, id_session, id_seat, is_paid, is_to_book) VALUES ";
+
+                for (int i = 1, counter = 0; i <= session.Hall.Rows; i++)
+                {
+                    for (int j = 1; j <= session.Hall.Seats; j++)
+                    {
+                        query += $"(@DC,@S,{idSeats[counter]},@F,@F)";
+
+                        if (++counter < seats)
+                        {
+                            query += ",";
+                        }
+                    }
+                }
+
+                sqlCommand = new MySqlCommand(query, DataBaseConnection.DBSqlConnection);
+
+                sqlCommand.Parameters.AddWithValue("DC", DateTime.Now);
+                sqlCommand.Parameters.AddWithValue("S", session.Id);
+                sqlCommand.Parameters.AddWithValue("F", false);
+
+                result = sqlCommand.ExecuteNonQuery() > 0 ? Status.OK : Status.Forbidden;
+            });
+
+            return result;
+        }
+
+        public static Status UpdateSession(Session session)
+        {
+            Status result = Status.Forbidden;
+
+            CheckAccess(() =>
+            {
+                string query = @"UPDATE sessions SET session_data = @SD, session_time = @ST, id_film = @F, price = @P WHERE id_session = @ID";
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, DataBaseConnection.DBSqlConnection);
+
+                sqlCommand.Parameters.AddWithValue("SD", session.SessionData);
+                sqlCommand.Parameters.AddWithValue("ST", session.SessionTime);
+                sqlCommand.Parameters.AddWithValue("F", session.Film.Id);
+                sqlCommand.Parameters.AddWithValue("P", session.Price);
+                sqlCommand.Parameters.AddWithValue("ID", session.Id);
+
+                result = sqlCommand.ExecuteNonQuery() > 0 ? Status.OK : Status.Forbidden;
+            });
 
             return result;
         }
@@ -280,12 +496,12 @@ namespace Scripts.Data
                                     seats: uint.Parse(dataReader[6].ToString())
                                 ),
                                 sessionData: DateTime.Parse(dataReader[7].ToString()),
-                                sessionTime: DateTime.Parse(dataReader[8].ToString()),
+                                sessionTime: TimeSpan.Parse(dataReader[8].ToString()),
                                 film: new Film
                                 (
                                     id: uint.Parse(dataReader[9].ToString()),
                                     filmName: dataReader[10].ToString(),
-                                    duration: DateTime.Parse(dataReader[11].ToString()),
+                                    duration: TimeSpan.Parse(dataReader[11].ToString()),
                                     startData: DateTime.Parse(dataReader[12].ToString()),
                                     endData: DateTime.Parse(dataReader[13].ToString())
                                 ),
@@ -327,7 +543,7 @@ namespace Scripts.Data
                         (
                             id: uint.Parse(dataReader[0].ToString()),
                             sessionData: DateTime.Parse(dataReader[1].ToString()),
-                            sessionTime: DateTime.Parse(dataReader[2].ToString()),
+                            sessionTime: TimeSpan.Parse(dataReader[2].ToString()),
                             hall: new Hall
                             (
                                 id: uint.Parse(dataReader[3].ToString()),
@@ -339,7 +555,7 @@ namespace Scripts.Data
                             (
                                 id: uint.Parse(dataReader[7].ToString()),
                                 filmName: dataReader[8].ToString(),
-                                duration: DateTime.Parse(dataReader[9].ToString()),
+                                duration: TimeSpan.Parse(dataReader[9].ToString()),
                                 startData: DateTime.Parse(dataReader[10].ToString()),
                                 endData: DateTime.Parse(dataReader[11].ToString())
                             ),
@@ -370,9 +586,9 @@ namespace Scripts.Data
                         (
                             id: uint.Parse(dataReader[0].ToString()),
                             filmName: dataReader[1].ToString(),
-                            duration: DateTime.Parse(dataReader[2].ToString()),
+                            duration: TimeSpan.Parse(dataReader[2].ToString()),
                             startData: DateTime.Parse(dataReader[3].ToString()),
-                            endData: DateTime.Parse(dataReader[2].ToString())
+                            endData: DateTime.Parse(dataReader[4].ToString())
                         ));
                 }
 

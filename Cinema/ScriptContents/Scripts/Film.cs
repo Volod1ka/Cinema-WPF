@@ -14,7 +14,7 @@ namespace Scripts
 
         public DateTime EndData { protected set; get; }
 
-        public DateTime Duration { protected set; get; }
+        public TimeSpan Duration { protected set; get; }
 
         public uint Id { protected set; get; }
 
@@ -24,10 +24,10 @@ namespace Scripts
 
         public Film()
         {
-            Input(id: 0, name: "", startData: DateTime.MinValue, endData: DateTime.MinValue, duration: DateTime.MinValue);
+            Input(id: 0, name: "", startData: DateTime.MinValue, endData: DateTime.MinValue, duration: TimeSpan.MinValue);
         }
 
-        public Film(uint id, string filmName, DateTime startData, DateTime endData, DateTime duration)
+        public Film(uint id, string filmName, DateTime startData, DateTime endData, TimeSpan duration)
         {
             Input(id: id, name: filmName, startData: startData, endData: endData, duration: duration);
         }
@@ -36,7 +36,7 @@ namespace Scripts
 
         #region Public Methods
 
-        public void Input(uint id, string name, DateTime startData, DateTime endData, DateTime duration)
+        public void Input(uint id, string name, DateTime startData, DateTime endData, TimeSpan duration)
         {
             Id = id;
             Name = name;

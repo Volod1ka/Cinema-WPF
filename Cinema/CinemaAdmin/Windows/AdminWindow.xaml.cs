@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows.Media.Animation;
 
 namespace CinemaAdmin
 {
@@ -266,7 +261,7 @@ namespace CinemaAdmin
                     from value
                         in sessions
                     where value.SessionData.ToShortDateString().Contains(searchSession) ||
-                          value.SessionTime.ToShortTimeString().Contains(searchSession) ||
+                          value.SessionTime.ToString().Contains(searchSession) ||
                           value.Film.Name.Contains(searchSession) ||
                           value.Hall.Name.Contains(searchSession) ||
                           value.Price.ToString().Contains(searchSession)
@@ -286,9 +281,9 @@ namespace CinemaAdmin
                     from value
                         in films
                     where value.Name.Contains(searchFilms) ||
-                          value.Duration.ToShortTimeString().Contains(searchFilms) ||
-                          value.StartData.ToShortDateString().Contains(searchFilms) ||
-                          value.EndData.ToShortDateString().Contains(searchFilms)
+                          value.Duration.ToString().Contains(searchFilms) ||
+                          value.StartData.ToString().Contains(searchFilms) ||
+                          value.EndData.ToString().Contains(searchFilms)
                     select value
                 );
             });
@@ -381,6 +376,95 @@ namespace CinemaAdmin
         private void GridEmployees_ContextMenuOpening(object sender, ContextMenuEventArgs e)
         {
             MenuItemUpdateEmployees.IsEnabled = GridEmployees.SelectedIndex > -1;
+        }
+
+        private void HallWindow(Scripts.Engine.Status status, object sender, RoutedEventArgs e)
+        {
+            Windows.HallWindow window = new Windows.HallWindow();
+            window.StatusData = status;
+
+            if (status.Equals(Scripts.Engine.Status.Update))
+            {
+                window.Hall = (Scripts.Hall)GridHalls.SelectedItem;
+            }
+
+            window.ShowDialog();
+            MenuItemRefreshHalls_Click(sender, e);
+        }
+
+        private void MenuItemUpdateHalls_Click(object sender, RoutedEventArgs e)
+        {
+            HallWindow(Scripts.Engine.Status.Update, sender, e);
+        }
+
+        private void MenuItemAddHalls_Click(object sender, RoutedEventArgs e)
+        {
+            HallWindow(Scripts.Engine.Status.Create, sender, e);
+        }
+
+        private void GridHalls_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+        {
+            MenuItemUpdateHalls.IsEnabled = GridHalls.SelectedIndex > -1;
+        }
+
+        private void FilmWindow(Scripts.Engine.Status status, object sender, RoutedEventArgs e)
+        {
+            Windows.FilmWindow window = new Windows.FilmWindow();
+            window.StatusData = status;
+
+            if (status.Equals(Scripts.Engine.Status.Update))
+            {
+                window.Film = (Scripts.Film)GridFilms.SelectedItem;
+            }
+
+            window.ShowDialog();
+            MenuItemRefreshFilms_Click(sender, e);
+        }
+
+        private void MenuItemAddFilms_Click(object sender, RoutedEventArgs e)
+        {
+            FilmWindow(Scripts.Engine.Status.Create, sender, e);
+        }
+
+        private void MenuItemUpdateFilms_Click(object sender, RoutedEventArgs e)
+        {
+            FilmWindow(Scripts.Engine.Status.Update, sender, e);
+        }
+
+        private void GridFilms_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+        {
+            MenuItemUpdateFilms.IsEnabled = GridFilms.SelectedIndex > -1;
+        }
+
+        private void SessionWindow(Scripts.Engine.Status status, object sender, RoutedEventArgs e)
+        {
+            Windows.SessionWindow window = new Windows.SessionWindow();
+            window.StatusData = status;
+            window.Films = films;
+            window.Halls = halls;
+
+            if (status.Equals(Scripts.Engine.Status.Update))
+            {
+                window.Session = (Scripts.Session)GridSessions.SelectedItem;
+            }
+
+            window.ShowDialog();
+            MenuItemRefreshSessions_Click(sender, e);
+        }
+
+        private void MenuItemAddSessions_Click(object sender, RoutedEventArgs e)
+        {
+            SessionWindow(Scripts.Engine.Status.Create, sender, e);
+        }
+
+        private void MenuItemUpdateSessions_Click(object sender, RoutedEventArgs e)
+        {
+            SessionWindow(Scripts.Engine.Status.Update, sender, e);
+        }
+
+        private void GridSessions_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+        {
+            MenuItemUpdateSessions.IsEnabled = GridSessions.SelectedIndex > -1;
         }
     }
 }

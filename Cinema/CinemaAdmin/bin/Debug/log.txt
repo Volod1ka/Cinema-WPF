@@ -308,3 +308,188 @@
    в CinemaAdmin.AdminWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\Windows\AdminWindow.xaml.cs:строка 181
    в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
    в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+
+[15.02.2021 7:17:27]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в CinemaAdmin.AdminWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\Windows\AdminWindow.xaml.cs:строка 179
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+[15.02.2021 7:18:14]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в CinemaAdmin.AdminWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\Windows\AdminWindow.xaml.cs:строка 179
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+
+[15.02.2021 10:39:06]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в CinemaAdmin.AdminWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\Windows\AdminWindow.xaml.cs:строка 179
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+
+[15.02.2021 13:17:41]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@N' must be defined.
+   в MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   в MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   в MySql.Data.MySqlClient.Statement.BindParameters()
+   в MySql.Data.MySqlClient.PreparableStatement.Execute()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass8_0.<AddHallAndSeats>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 294
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+
+[15.02.2021 13:21:28]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@N' must be defined.
+   в MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   в MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   в MySql.Data.MySqlClient.Statement.BindParameters()
+   в MySql.Data.MySqlClient.PreparableStatement.Execute()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass8_0.<AddHallAndSeats>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 294
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+[15.02.2021 13:21:44]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry 'Nazva' for key 'hall_name'
+   в MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   в MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   в MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass8_0.<AddHallAndSeats>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 265
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+
+[15.02.2021 13:42:41]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VALUES (2, 1, 2), VALUES (2, 1, 3), VALUES (2, 2, 1), VALUES (2, 2, 2), VALUES (' at line 1
+   в MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   в MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   в MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass8_0.<AddHallAndSeats>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 294
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+
+[15.02.2021 13:46:38]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VALUES (3, 1, 2), VALUES (3, 1, 3), VALUES (3, 2, 1), VALUES (3, 2, 2), VALUES (' at line 1
+   в MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   в MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   в MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass8_0.<AddHallAndSeats>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 294
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+
+[15.02.2021 14:00:48]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+
+[15.02.2021 18:07:54]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect date value: '0 01:30:00.000000' for column 'end_data' at row 1
+   в MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   в MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   в MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass10_0.<AddFilm>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 324
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+[15.02.2021 18:08:42]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect date value: '0 01:30:00.000000' for column 'end_data' at row 1
+   в MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   в MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   в MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass10_0.<AddFilm>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 324
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+
+[15.02.2021 18:20:53]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect date value: '1:30' for column 'end_data' at row 1
+   в MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   в MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   в MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass10_0.<AddFilm>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 324
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+
+[15.02.2021 18:25:11]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+
+[15.02.2021 18:33:35]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect date value: '0 01:30:00.000000' for column 'end_data' at row 1
+   в MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   в MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   в MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass10_0.<AddFilm>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 324
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+
+[15.02.2021 18:36:38]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Only TimeSpan objects can be serialized by MySqlTimeSpan
+   в MySql.Data.Types.MySqlTimeSpan.MySql.Data.Types.IMySqlValue.WriteValue(MySqlPacket packet, Boolean binary, Object val, Int32 length)
+   в MySql.Data.MySqlClient.MySqlParameter.Serialize(MySqlPacket packet, Boolean binary, MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   в MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   в MySql.Data.MySqlClient.Statement.BindParameters()
+   в MySql.Data.MySqlClient.PreparableStatement.Execute()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass10_0.<AddFilm>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 324
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+
+[15.02.2021 18:41:39]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect date value: '0 01:20:00.000000' for column 'end_data' at row 1
+   в MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   в MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   в MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass10_0.<AddFilm>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 324
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+
+[15.02.2021 18:47:40]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[15.02.2021 18:47:41]=>[Error]: System.Threading.ThreadAbortException: Поток находился в процессе прерывания.
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 75
+   в Scripts.Data.DataBaseManager.get_IsActiveUser() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 28
+
+[15.02.2021 19:39:49]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter 'SD' has already been defined.
+   в MySql.Data.MySqlClient.MySqlParameterCollection.InternalAdd(MySqlParameter value, Nullable`1 index)
+   в MySql.Data.MySqlClient.MySqlParameterCollection.AddWithValue(String parameterName, Object value)
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass11_0.<UpdateFilm>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 343
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+
+[15.02.2021 19:46:34]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter 'SD' has already been defined.
+   в MySql.Data.MySqlClient.MySqlParameterCollection.InternalAdd(MySqlParameter value, Nullable`1 index)
+   в MySql.Data.MySqlClient.MySqlParameterCollection.AddWithValue(String parameterName, Object value)
+   в Scripts.Data.DataBaseManager.<>c__DisplayClass11_0.<UpdateFilm>b__0() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 343
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 75
+
+[15.02.2021 19:54:00]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[15.02.2021 19:56:34]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67

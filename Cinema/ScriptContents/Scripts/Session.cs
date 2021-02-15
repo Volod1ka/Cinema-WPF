@@ -10,7 +10,7 @@ namespace Scripts
 
         public DateTime SessionData { protected set; get; }
 
-        public DateTime SessionTime { protected set; get; }
+        public TimeSpan SessionTime { protected set; get; }
 
         public Hall Hall { protected set; get; }
 
@@ -24,10 +24,10 @@ namespace Scripts
 
         public Session()
         {
-            Input(id: 0, film: new Film(), sessionData: DateTime.MinValue, sessionTime: DateTime.MinValue, hall: new Hall(), price: 0);
+            Input(id: 0, film: new Film(), sessionData: DateTime.MinValue, sessionTime: TimeSpan.MinValue, hall: new Hall(), price: 0);
         }
 
-        public Session(uint id, Film film, DateTime sessionData, DateTime sessionTime, Hall hall, float price)
+        public Session(uint id, Film film, DateTime sessionData, TimeSpan sessionTime, Hall hall, float price)
         {
             Input(id: id, film: film, sessionData: sessionData, sessionTime: sessionTime, hall: hall, price: price);
         }
@@ -36,7 +36,7 @@ namespace Scripts
 
         #region Public Methods
 
-        public void Input(uint id, Film film, DateTime sessionData, DateTime sessionTime, Hall hall, float price)
+        public void Input(uint id, Film film, DateTime sessionData, TimeSpan sessionTime, Hall hall, float price)
         {
             Id = id;
             Film = film;

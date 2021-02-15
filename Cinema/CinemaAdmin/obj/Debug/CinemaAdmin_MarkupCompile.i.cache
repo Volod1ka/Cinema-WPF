@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\App.xaml
-5251541008
+8-174225460
 
-9-929998947
+12-433938653
 137-876101198
-Styles\Resources.xaml;Styles\Styles.xaml;Windows\AdminWindow.xaml;Windows\EmployeeWindow.xaml;Windows\LoginWindow.xaml;
+Styles\Resources.xaml;Styles\Styles.xaml;Windows\AdminWindow.xaml;Windows\EmployeeWindow.xaml;Windows\FilmWindow.xaml;Windows\HallWindow.xaml;Windows\LoginWindow.xaml;Windows\SessionWindow.xaml;
 
 True
 

@@ -321,7 +321,7 @@ namespace Cinema
             (
                 from value
                     in tickets
-                where value.Session.SessionData.AddHours(value.Session.SessionTime.Hour).AddMinutes(value.Session.SessionTime.Minute + 15) >= dateTimeNow
+                where value.Session.SessionData.Add(value.Session.SessionTime).AddMinutes(15) >= dateTimeNow
                 group value by new { value.Session.Film.Name }
                     into newGroup
                 select newGroup.FirstOrDefault().Session.Film.Name
@@ -331,7 +331,7 @@ namespace Cinema
             (
                 from value
                     in tickets
-                where value.Session.SessionData.AddHours(value.Session.SessionTime.Hour).AddMinutes(value.Session.SessionTime.Minute + 15) >= dateTimeNow
+                where value.Session.SessionData.Add(value.Session.SessionTime).AddMinutes(15) >= dateTimeNow
                 group value by new { value.Session.Hall.Name }
                     into newGroup
                 select newGroup.FirstOrDefault().Session.Hall.Name
@@ -403,9 +403,9 @@ namespace Cinema
                 (
                    from value
                        in tickets
-                   where value.Session.SessionData.AddHours(value.Session.SessionTime.Hour).AddMinutes(value.Session.SessionTime.Minute + 15) >= DateTime.Now &&
+                   where value.Session.SessionData.Add(value.Session.SessionTime).AddMinutes(15) >= DateTime.Now &&
                       (value.Session.SessionData.ToShortDateString().Contains(searchSession) ||
-                      value.Session.SessionTime.ToShortTimeString().Contains(searchSession) ||
+                      value.Session.SessionTime.ToString().Contains(searchSession) ||
                       value.Session.Price.ToString().Contains(searchSession))
                    group value by new { Film = value.Session.Film.Name, Hall = value.Session.Hall.Name, value.Session.SessionData, value.Session.SessionTime }
                        into newGroup
@@ -436,7 +436,7 @@ namespace Cinema
             {
                 var cellInfo = GridTickets.SelectedCells[index].Item as Scripts.Ticket;
 
-                if (cellInfo.Session.SessionData.AddHours(cellInfo.Session.SessionTime.Hour).AddMinutes(cellInfo.Session.SessionTime.Minute + 15) >= DateTime.Now)
+                if (cellInfo.Session.SessionData.Add(cellInfo.Session.SessionTime).AddMinutes(15) >= DateTime.Now)
                 {
                     result = isSell ? Scripts.Data.DataBaseManager.SellTicket(ticket: cellInfo.Id) : Scripts.Data.DataBaseManager.BackTicket(ticket: cellInfo.Id);
                 }

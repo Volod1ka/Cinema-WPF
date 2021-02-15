@@ -82,14 +82,14 @@
                 <Label Grid.Column="1" Style="{StaticResource LabelStyle1}" Content="{x:Static res:Language.LabelSession}" Margin="10,12,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
                 <Grid Grid.Column="1" x:Name="GridSearchSessions" Height="30" Margin="175,12,282,0" VerticalAlignment="Top" Background="Transparent">
                     <Label Content="&#xF78B;" Style="{StaticResource LabelIconStyle}" HorizontalAlignment="Left" Width="30"/>
-                    <Label Content="{x:Static res:Language.LabelFind}" Style="{StaticResource LabelIconStyle}" FontFamily="Segoe UI" HorizontalContentAlignment="Left"  Margin="30,0,0,0"/>
+                    <Label Content="{x:Static res:Language.LabelFind}" Style="{StaticResource LabelIconStyle}" FontFamily="Segoe UI" HorizontalContentAlignment="Left" Margin="30,0,0,0"/>
                 </Grid>
                 <TextBox Grid.Column="1" x:Name="TextBoxSearchSessions" Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="175,12,282,0" VerticalAlignment="Top" Width="Auto" TextChanged="TextBoxSearchSessions_TextChanged" GotFocus="TextBoxSearchSessions_GotFocus" LostFocus="TextBoxSearchSessions_LostFocus"/>
-                
+
                 <DataGrid x:Name="GridSessions" Grid.Column="1" Style="{StaticResource DataGridStyle}" Margin="10,47,282,49" SelectedCellsChanged="GridSessions_SelectedCellsChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnSessionData}" Binding="{Binding Path=Session.SessionData, StringFormat=\{0:dd.MM.yyyy\}}"/>
-                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnSessionTime}" Binding="{Binding Path=Session.SessionTime, StringFormat=\{0:HH:mm\}}"/>
+                        <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnSessionTime}" Binding="{Binding Path=Session.SessionTime}"/>
                         <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnFilm}" Binding="{Binding Path=Session.Film.Name}"/>
                         <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnHall}" Binding="{Binding Path=Session.Hall.Name}"/>
                         <DataGridTextColumn Header="{x:Static res:Language.DataGridColumnPrice}" Binding="{Binding Path=Session.Price}"/>
@@ -108,7 +108,7 @@
                     <Label Content="{x:Static res:Language.LabelFind}" Style="{StaticResource LabelIconStyle}" FontFamily="Segoe UI" HorizontalContentAlignment="Left"  Margin="30,0,0,0"/>
                 </Grid>
                 <TextBox Grid.Column="1" x:Name="TextBoxSearchTickets"  Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="0,12,10,0" VerticalAlignment="Top" Width="116" HorizontalAlignment="Right" TextChanged="TextBoxSearchTickets_TextChanged" GotFocus="TextBoxSearchTickets_GotFocus" LostFocus="TextBoxSearchTickets_LostFocus"/>
-                
+
                 <DataGrid x:Name="GridTickets" Grid.Column="1" Style="{StaticResource DataGridStyle}" ContextMenuOpening="GridTickets_ContextMenuOpening" ContextMenuClosing="GridTickets_ContextMenuClosing" Margin="0,47,10,154" HorizontalAlignment="Right" Width="252" HorizontalScrollBarVisibility="Hidden">
                     <DataGrid.Columns>
                         <!--<DataGridCheckBoxColumn Header="Temp"   IsThreeState="{Binding IsPaid}"/> -->

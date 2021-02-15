@@ -48,3 +48,9 @@ D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\bin\Debug\Syst
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\obj\Debug\Windows\EmployeeWindow.g.cs
 D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\obj\Debug\Windows\EmployeeWindow.baml
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\obj\Debug\Windows\HallWindow.g.cs
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\obj\Debug\Windows\HallWindow.baml
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\obj\Debug\Windows\FilmWindow.g.cs
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\obj\Debug\Windows\FilmWindow.baml
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\obj\Debug\Windows\SessionWindow.g.cs
+D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\obj\Debug\Windows\SessionWindow.baml

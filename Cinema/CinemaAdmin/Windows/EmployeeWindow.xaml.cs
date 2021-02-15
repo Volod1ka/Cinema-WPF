@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace CinemaAdmin.Windows
 {
@@ -37,6 +29,8 @@ namespace CinemaAdmin.Windows
         }
 
         #endregion
+
+        #region Windows Methods
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
@@ -71,34 +65,6 @@ namespace CinemaAdmin.Windows
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MoveWindow(sender, e);
-        }
-
-        private void MoveWindow(object sender, MouseEventArgs e)
-        {
-            if (e.LeftButton.Equals(MouseButtonState.Pressed))
-            {
-                this.DragMove();
-            }
-        }
-
-        private void UpdateComboBox()
-        {
-            Scripts.Engine.RefreshDataJobs(out jobs);
-
-            ComboBoxJobs.ItemsSource =
-            (
-                from value
-                    in jobs
-                select value.Name
-            );
-        }
-
-        private bool AccessToCreate()
-        {
-            bool IsUpdateStatus = StatusData.Equals(Scripts.Engine.Status.Update) ? (TextBoxPassword.Text.Length == 0 || TextBoxPassword.Text.Length >= Properties.Settings.Default.MinPasswordLength) : TextBoxPassword.Text.Length >= Properties.Settings.Default.MinPasswordLength;
-
-            return ButtonSave.IsEnabled = TextBoxName.Text.Length > 0 && ComboBoxJobs.SelectedIndex > -1 &&
-                   IsUpdateStatus && TextBoxLogin.Text.Length >= Properties.Settings.Default.MinLoginLength;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -161,12 +127,45 @@ namespace CinemaAdmin.Windows
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            AccessToCreate();
+            ButtonSave.IsEnabled = AccessToCreate();
         }
 
         private void ComboBoxJobs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            AccessToCreate();
+            ButtonSave.IsEnabled = AccessToCreate();
         }
+
+        #endregion
+
+        #region Customer Methods
+
+        private void MoveWindow(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton.Equals(MouseButtonState.Pressed))
+            {
+                this.DragMove();
+            }
+        }
+
+        private void UpdateComboBox()
+        {
+            Scripts.Engine.RefreshDataJobs(out jobs);
+
+            ComboBoxJobs.ItemsSource =
+            (
+                from value
+                    in jobs
+                select value.Name
+            );
+        }
+
+        private bool AccessToCreate()
+        {
+            bool IsUpdateStatus = StatusData.Equals(Scripts.Engine.Status.Update) ? (TextBoxPassword.Text.Length == 0 || TextBoxPassword.Text.Length >= Properties.Settings.Default.MinPasswordLength) : TextBoxPassword.Text.Length >= Properties.Settings.Default.MinPasswordLength;
+
+            return TextBoxName.Text.Length > 0 && ComboBoxJobs.SelectedIndex > -1 && IsUpdateStatus && TextBoxLogin.Text.Length >= Properties.Settings.Default.MinLoginLength;
+        }
+
+        #endregion
     }
 }

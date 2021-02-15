@@ -59,17 +59,17 @@
                             0,44" ScrollViewer.HorizontalScrollBarVisibility="Auto" TabStripPlacement="Left" >
                     <TabItem Header="Розклад сеансів">
                         <Grid Background="{StaticResource Background}">
-                            <Label Style="{StaticResource LabelStyle1}" Content="Розклад сеансів:" Margin="10,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
-                            <Grid x:Name="GridSearchSessions" Height="30" Margin="175,40,0,0" VerticalAlignment="Top" Background="Transparent" HorizontalAlignment="Left" Width="210">
+                            <Label Style="{StaticResource LabelStyle1}" Content="Розклад сеансів:" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
+                            <Grid x:Name="GridSearchSessions" Height="30" Margin="175,10,0,0" VerticalAlignment="Top" Background="Transparent" HorizontalAlignment="Left" Width="210">
                                 <Label Content="&#xF78B;" Style="{StaticResource LabelIconStyle}" HorizontalAlignment="Left" Width="30"/>
                                 <Label Content="Пошук..." Style="{StaticResource LabelIconStyle}" FontFamily="Segoe UI" HorizontalContentAlignment="Left"  Margin="30,0,0,0"/>
                             </Grid>
-                            <TextBox x:Name="TextBoxSearchSessions" Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="175,40,0,0" VerticalAlignment="Top" Width="210" TextChanged="TextBoxSearchSessions_TextChanged" GotFocus="TextBoxSearchSessions_GotFocus" LostFocus="TextBoxSearchSessions_LostFocus" HorizontalAlignment="Left"/>
+                            <TextBox x:Name="TextBoxSearchSessions" Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="175,10,0,0" VerticalAlignment="Top" Width="210" TextChanged="TextBoxSearchSessions_TextChanged" GotFocus="TextBoxSearchSessions_GotFocus" LostFocus="TextBoxSearchSessions_LostFocus" HorizontalAlignment="Left"/>
 
-                            <DataGrid x:Name="GridSessions" Style="{StaticResource DataGridStyle}" Margin="10,75,282,10">
+                            <DataGrid x:Name="GridSessions" Style="{StaticResource DataGridStyle}" Margin="10,50,10,10" ContextMenuOpening="GridSessions_ContextMenuOpening">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="День сеансу" Binding="{Binding Path=SessionData, StringFormat=\{0:dd.MM.yyyy\}}"/>
-                                    <DataGridTextColumn Header="Час сеансу" Binding="{Binding Path=SessionTime, StringFormat=\{0:HH:mm\}}"/>
+                                    <DataGridTextColumn Header="Час сеансу" Binding="{Binding Path=SessionTime}"/>
                                     <DataGridTextColumn Header="Назва фільму" Binding="{Binding Path=Film.Name}"/>
                                     <DataGridTextColumn Header="Назва зали" Binding="{Binding Path=Hall.Name}"/>
                                     <DataGridTextColumn Header="Вартість" Binding="{Binding Path=Price}"/>
@@ -78,38 +78,26 @@
                                     <ContextMenu Style="{StaticResource ContextMenuStyle}">
                                         <MenuItem Header="Оновити сеанси" Click="MenuItemRefreshSessions_Click"/>
                                         <Separator/>
-                                        <MenuItem Header="Додати"/>
-                                        <MenuItem x:Name="MenuItemUpdateSessions" Header="Редагувати"/>
+                                        <MenuItem Header="Додати" Click="MenuItemAddSessions_Click"/>
+                                        <MenuItem x:Name="MenuItemUpdateSessions" Header="Редагувати" Click="MenuItemUpdateSessions_Click"/>
                                     </ContextMenu>
                                 </DataGrid.ContextMenu>
                             </DataGrid>
-
-                            <Label Content="Назва зали" Foreground="{StaticResource Foreground}" Margin="0,75,142,0" HorizontalAlignment="Right" Width="120" Height="30" VerticalAlignment="Top"/>
-                            <ComboBox x:Name="ComboBoxHalls"  Height="30" Margin="0,75,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="127"/>
-                            <Label  Content="Назва фільму" Foreground="{StaticResource Foreground}" Height="30" Margin="0,110,142,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
-                            <ComboBox x:Name="ComboBoxFilms"  Height="30" Margin="0,110,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="127"/>
-                            <Label Content="День сеансу" Foreground="{StaticResource Foreground}" Height="30" Margin="0,145,142,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
-                            <ComboBox  Height="30" Margin="0,145,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="127"/>
-                            <Label Content="Час сеансу" Foreground="{StaticResource Foreground}" Height="30" Margin="0,180,142,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
-                            <TextBox  Style="{StaticResource TextBoxInputStyle}" Margin="0,180,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="127"/>
-                            <Label Content="Вартість" Foreground="{StaticResource Foreground}" Height="30" Margin="0,215,142,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
-                            <TextBox  Style="{StaticResource TextBoxInputStyle}" Margin="0,215,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="127"/>
-                            <Button Content="Зберегти" HorizontalAlignment="Left" Margin="572,250,0,0" VerticalAlignment="Top" Width="75"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Фільми">
                         <Grid Background="{StaticResource Background}">
-                            <Label Style="{StaticResource LabelStyle1}" Content="Список фільмів:" Margin="10,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
-                            <Grid x:Name="GridSearchFilms" Height="30" Margin="175,40,0,0" VerticalAlignment="Top" Background="Transparent" HorizontalAlignment="Left" Width="210">
+                            <Label Style="{StaticResource LabelStyle1}" Content="Список фільмів:" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
+                            <Grid x:Name="GridSearchFilms" Height="30" Margin="175,10,0,0" VerticalAlignment="Top" Background="Transparent" HorizontalAlignment="Left" Width="210">
                                 <Label Content="&#xF78B;" Style="{StaticResource LabelIconStyle}" HorizontalAlignment="Left" Width="30"/>
                                 <Label Content="Пошук..." Style="{StaticResource LabelIconStyle}" FontFamily="Segoe UI" HorizontalContentAlignment="Left"  Margin="30,0,0,0"/>
                             </Grid>
-                            <TextBox x:Name="TextBoxSearchFilms" Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="175,40,0,0" VerticalAlignment="Top" Width="210" TextChanged="TextBoxSearchFilms_TextChanged" GotFocus="TextBoxSearchFilms_GotFocus" LostFocus="TextBoxSearchFilms_LostFocus" HorizontalAlignment="Left"/>
+                            <TextBox x:Name="TextBoxSearchFilms" Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="175,10,0,0" VerticalAlignment="Top" Width="210" TextChanged="TextBoxSearchFilms_TextChanged" GotFocus="TextBoxSearchFilms_GotFocus" LostFocus="TextBoxSearchFilms_LostFocus" HorizontalAlignment="Left"/>
 
-                            <DataGrid x:Name="GridFilms" Style="{StaticResource DataGridStyle}" Margin="10,75,282,10">
+                            <DataGrid x:Name="GridFilms" Style="{StaticResource DataGridStyle}" Margin="10,50,10,10" ContextMenuOpening="GridFilms_ContextMenuOpening">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Назва фільму" Binding="{Binding Path=Name}"/>
-                                    <DataGridTextColumn Header="Тривалість" Binding="{Binding Path=Duration, StringFormat=\{0:HH:mm\}}"/>
+                                    <DataGridTextColumn Header="Тривалість" Binding="{Binding Path=Duration}"/>
                                     <DataGridTextColumn Header="Початок показу" Binding="{Binding Path=StartData, StringFormat=\{0:dd.MM.yyyy\}}"/>
                                     <DataGridTextColumn Header="Кінець показу" Binding="{Binding Path=EndData, StringFormat=\{0:dd.MM.yyyy\}}"/>
                                 </DataGrid.Columns>
@@ -117,32 +105,23 @@
                                     <ContextMenu Style="{StaticResource ContextMenuStyle}">
                                         <MenuItem Header="Оновити фільми" Click="MenuItemRefreshFilms_Click"/>
                                         <Separator/>
-                                        <MenuItem Header="Додати"/>
-                                        <MenuItem x:Name="MenuItemUpdateFilms" Header="Редагувати"/>
+                                        <MenuItem Header="Додати" Click="MenuItemAddFilms_Click"/>
+                                        <MenuItem x:Name="MenuItemUpdateFilms" Header="Редагувати" Click="MenuItemUpdateFilms_Click"/>
                                     </ContextMenu>
                                 </DataGrid.ContextMenu>
                             </DataGrid>
-
-                            <Label Content="Назва фільму" Foreground="{StaticResource Foreground}" Margin="0,75,142,0" HorizontalAlignment="Right" Width="120" Height="30" VerticalAlignment="Top"/>
-                            <TextBox Style="{StaticResource TextBoxInputStyle}" Margin="0,75,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="127"/>
-                            <Label Content="Початок показу" Foreground="{StaticResource Foreground}" Height="30" Margin="0,110,142,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
-                            <DatePicker Margin="0,110,10,0" VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="127"/>
-                            <Label Content="Кінець показу" Foreground="{StaticResource Foreground}" Height="30" Margin="0,145,142,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
-                            <DatePicker Margin="0,145,10,0" VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="127"/>
-                            <Label Content="Тривалість" Foreground="{StaticResource Foreground}" Height="30" Margin="0,180,142,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
-                            <TextBox Style="{StaticResource TextBoxInputStyle}" Margin="0,180,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="127"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Зали">
                         <Grid Background="{StaticResource Background}">
-                            <Label Style="{StaticResource LabelStyle1}" Content="Список зал:" Margin="10,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
-                            <Grid x:Name="GridSearchHalls" Height="30" Margin="175,40,0,0" VerticalAlignment="Top" Background="Transparent" HorizontalAlignment="Left" Width="210">
+                            <Label Style="{StaticResource LabelStyle1}" Content="Список зал:" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
+                            <Grid x:Name="GridSearchHalls" Height="30" Margin="175,10,0,0" VerticalAlignment="Top" Background="Transparent" HorizontalAlignment="Left" Width="210">
                                 <Label Content="&#xF78B;" Style="{StaticResource LabelIconStyle}" HorizontalAlignment="Left" Width="30"/>
                                 <Label Content="Пошук..." Style="{StaticResource LabelIconStyle}" FontFamily="Segoe UI" HorizontalContentAlignment="Left"  Margin="30,0,0,0"/>
                             </Grid>
-                            <TextBox x:Name="TextBoxSearchHalls" Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="175,40,0,0" VerticalAlignment="Top" Width="210" TextChanged="TextBoxSearchHalls_TextChanged" GotFocus="TextBoxSearchHalls_GotFocus" LostFocus="TextBoxSearchHalls_LostFocus" HorizontalAlignment="Left"/>
+                            <TextBox x:Name="TextBoxSearchHalls" Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="175,10,0,0" VerticalAlignment="Top" Width="210" TextChanged="TextBoxSearchHalls_TextChanged" GotFocus="TextBoxSearchHalls_GotFocus" LostFocus="TextBoxSearchHalls_LostFocus" HorizontalAlignment="Left"/>
 
-                            <DataGrid x:Name="GridHalls" Style="{StaticResource DataGridStyle}" Margin="10,75,282,10">
+                            <DataGrid x:Name="GridHalls" Style="{StaticResource DataGridStyle}" Margin="10,50,10,10" ContextMenuOpening="GridHalls_ContextMenuOpening">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Назва зали" Binding="{Binding Path=Name}"/>
                                     <DataGridTextColumn Header="Кількість рядів" Binding="{Binding Path=Rows}"/>
@@ -152,30 +131,23 @@
                                     <ContextMenu Style="{StaticResource ContextMenuStyle}">
                                         <MenuItem Header="Оновити зали" Click="MenuItemRefreshHalls_Click"/>
                                         <Separator/>
-                                        <MenuItem Header="Додати"/>
-                                        <MenuItem x:Name="MenuItemUpdateHalls" Header="Редагувати"/>
+                                        <MenuItem Header="Додати" Click="MenuItemAddHalls_Click"/>
+                                        <MenuItem x:Name="MenuItemUpdateHalls" Header="Редагувати" Click="MenuItemUpdateHalls_Click"/>
                                     </ContextMenu>
                                 </DataGrid.ContextMenu>
                             </DataGrid>
-
-                            <Label Content="Назва зали" Foreground="{StaticResource Foreground}" Margin="0,75,142,0" HorizontalAlignment="Right" Width="120" Height="30" VerticalAlignment="Top"/>
-                            <TextBox Style="{StaticResource TextBoxInputStyle}" Margin="0,75,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="127"/>
-                            <Label Content="Кількість рядів" Foreground="{StaticResource Foreground}" Height="30" Margin="0,110,142,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
-                            <TextBox Style="{StaticResource TextBoxInputStyle}" Margin="0,110,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="127" MaxLength="2"/>
-                            <Label Content="Кількість місць" Foreground="{StaticResource Foreground}" Height="30" Margin="0,145,142,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
-                            <TextBox Style="{StaticResource TextBoxInputStyle}" Margin="0,145,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="127" MaxLength="2"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Користувачі">
                         <Grid Background="{StaticResource Background}">
-                            <Label Style="{StaticResource LabelStyle1}" Content="Список працівників:" Margin="10,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="160"/>
-                            <Grid x:Name="GridSearchEmployees" Height="30" Margin="175,40,0,0" VerticalAlignment="Top" Background="Transparent" HorizontalAlignment="Left" Width="210">
+                            <Label Style="{StaticResource LabelStyle1}" Content="Список працівників:" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="160"/>
+                            <Grid x:Name="GridSearchEmployees" Height="30" Margin="175,10,0,0" VerticalAlignment="Top" Background="Transparent" HorizontalAlignment="Left" Width="210">
                                 <Label Content="&#xF78B;" Style="{StaticResource LabelIconStyle}" HorizontalAlignment="Left" Width="30"/>
                                 <Label Content="Пошук..." Style="{StaticResource LabelIconStyle}" FontFamily="Segoe UI" HorizontalContentAlignment="Left"  Margin="30,0,0,0"/>
                             </Grid>
-                            <TextBox x:Name="TextBoxSearchEmployees" Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="175,40,0,0" VerticalAlignment="Top" Width="210" TextChanged="TextBoxSearchEmployees_TextChanged" GotFocus="TextBoxSearchEmployees_GotFocus" LostFocus="TextBoxSearchEmployees_LostFocus" HorizontalAlignment="Left"/>
+                            <TextBox x:Name="TextBoxSearchEmployees" Style="{StaticResource TextBoxInputStyle}" IsReadOnly="False" Margin="175,10,0,0" VerticalAlignment="Top" Width="210" TextChanged="TextBoxSearchEmployees_TextChanged" GotFocus="TextBoxSearchEmployees_GotFocus" LostFocus="TextBoxSearchEmployees_LostFocus" HorizontalAlignment="Left"/>
 
-                            <DataGrid x:Name="GridEmployees" Style="{StaticResource DataGridStyle}" Margin="10,75,10,10" ContextMenuOpening="GridEmployees_ContextMenuOpening">
+                            <DataGrid x:Name="GridEmployees" Style="{StaticResource DataGridStyle}" Margin="10,50,10,10" ContextMenuOpening="GridEmployees_ContextMenuOpening">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Ім'я" Binding="{Binding Path=Name}"/>
                                     <DataGridTextColumn Header="Посада" Binding="{Binding Path=Job.Name}"/>
@@ -191,11 +163,6 @@
                                     </ContextMenu>
                                 </DataGrid.ContextMenu>
                             </DataGrid>
-                        </Grid>
-                    </TabItem>
-                    <TabItem Header="Temp">
-                        <Grid Background="{StaticResource Background}">
-
                         </Grid>
                     </TabItem>
                 </TabControl>
