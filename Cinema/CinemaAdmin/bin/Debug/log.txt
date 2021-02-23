@@ -493,3 +493,85 @@
    в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
    в MySql.Data.MySqlClient.MySqlConnection.Open()
    в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+
+[16.02.2021 18:46:51]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[16.02.2021 18:47:00]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в CinemaAdmin.AdminWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\CinemaAdmin\Windows\AdminWindow.xaml.cs:строка 174
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+[16.02.2021 18:47:24]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[16.02.2021 18:47:32]=>[Missing connection]: Connecting to data base denied.
+
+[17.02.2021 10:37:31]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[17.02.2021 10:38:19]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+
+[17.02.2021 12:36:47]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[17.02.2021 12:42:43]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[17.02.2021 12:43:42]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[17.02.2021 12:46:32]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[17.02.2021 12:46:51]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[17.02.2021 12:50:10]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+
+[17.02.2021 15:08:43]=>[Error]: System.InvalidOperationException: The connection is already open.
+   в MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   в MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67

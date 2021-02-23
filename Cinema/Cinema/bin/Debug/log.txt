@@ -2183,3 +2183,185 @@
    в MySql.Data.MySqlClient.MySqlConnection.Open()
    в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
 [12.02.2021 13:54:21]=>[Missing connection]: Connecting to data base denied.
+
+[16.02.2021 16:22:07]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 192.168.0.106:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 192.168.0.106:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[16.02.2021 16:33:40]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 192.168.0.106:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 192.168.0.106:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[16.02.2021 16:34:00]=>[Missing connection]: Connecting to data base denied.
+[16.02.2021 16:44:02]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Сделана попытка выполнить операцию на сокете при отключенной сети 192.168.0.106:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Сделана попытка выполнить операцию на сокете при отключенной сети 192.168.0.106:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[16.02.2021 16:44:04]=>[Missing connection]: Connecting to data base denied.
+[16.02.2021 16:44:06]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Сделана попытка выполнить операцию на сокете при отключенной сети 192.168.0.106:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Сделана попытка выполнить операцию на сокете при отключенной сети 192.168.0.106:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[16.02.2021 16:44:08]=>[Missing connection]: Connecting to data base denied.
+[16.02.2021 16:44:09]=>[Error]: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: Произошла одна или несколько ошибок. ---> System.Net.Sockets.SocketException: Сделана попытка выполнить операцию на сокете при отключенной сети 192.168.0.106:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- Конец трассировки внутреннего стека исключений ---
+   в System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   в System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   в MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+---> (Внутреннее исключение #0) System.Net.Sockets.SocketException (0x80004005): Сделана попытка выполнить операцию на сокете при отключенной сети 192.168.0.106:3306
+   в System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   в System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   в System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)<---
+
+   в MySql.Data.MySqlClient.NativeDriver.Open()
+   в MySql.Data.MySqlClient.Driver.Open()
+   в MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   в MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   в MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   в MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   в MySql.Data.MySqlClient.MySqlConnection.Open()
+   в Scripts.Data.DataBaseConnection.ConnectionOpen() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseConnection.cs:строка 67
+[16.02.2021 16:44:12]=>[Missing connection]: Connecting to data base denied.
+
+[17.02.2021 10:37:41]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в Cinema.MainWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 425
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+
+[17.02.2021 12:37:48]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в Cinema.MainWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 425
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+[17.02.2021 12:40:49]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в Cinema.MainWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 425
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+
+[17.02.2021 12:47:07]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в Cinema.MainWindow.LoginWindowShow() в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 433
+   в Cinema.MainWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 426
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+
+[17.02.2021 15:08:55]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в Cinema.MainWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 425
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+[17.02.2021 15:21:44]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в Cinema.MainWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 425
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71
+[17.02.2021 15:21:47]=>[Error]: System.InvalidOperationException: Вызывающий поток не может получить доступ к данному объекту, так как владельцем этого объекта является другой поток.
+   в System.Windows.Threading.Dispatcher.VerifyAccess()
+   в System.Windows.Application.get_Windows()
+   в Cinema.MainWindow.ChangeUser(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\Cinema\Windows\MainWindow.xaml.cs:строка 425
+   в Scripts.Account.DiactivateAccount(Boolean message) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Account.cs:строка 57
+   в Scripts.Data.DataBaseManager.CheckAccess(Action action) в D:\Microsoft Visual Studio\Projects\Cinema-WPF\Cinema\ScriptContents\Scripts\Data\DataBaseManager.cs:строка 71

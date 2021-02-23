@@ -203,7 +203,7 @@ namespace Cinema
             int index = GridTickets.SelectedIndex;
             bool access = index > -1;
 
-            Scripts.Ticket cellInfo = access ? (Scripts.Ticket)GridTickets.SelectedCells[index].Item : new Scripts.Ticket();
+            Scripts.Ticket cellInfo = access ? (Scripts.Ticket)GridTickets.SelectedItem : new Scripts.Ticket();
 
             MenuItemSell.IsEnabled = access ? !cellInfo.IsPaid : false;
             MenuItemBack.IsEnabled = access ? cellInfo.IsPaid : false;

@@ -41,8 +41,6 @@
 
                 <Menu IsMainMenu="True" Margin="45,10,0,0" Style="{StaticResource MainMenuStyle}" HorizontalAlignment="Left" Width="155">
                     <MenuItem Header="Програма">
-                        <MenuItem/>
-                        <Separator/>
                         <MenuItem x:Name="MenuExit" Header="Вихід" Command="Close" InputGestureText="ATL+F4"/>
                     </MenuItem>
                 </Menu>
